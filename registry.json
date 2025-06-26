@@ -1,0 +1,6 @@
+{
+   "$schema": "https://shadcn-vue.com/schema/registry.json",
+   "name": "acme",
+   "homepage": "https://acme.com",
+   "items": []
+}
