@@ -1,6 +1,17 @@
 {
    "$schema": "https://shadcn-vue.com/schema/registry.json",
-   "name": "acme",
-   "homepage": "https://acme.com",
-   "items": []
+   "name": "vue-persian-calendar",
+   "homepage": "https://vue-persian-calendar.com",
+   "items": [
+      {
+         "name": "comp-1",
+         "type": "registry:component",
+         "files": [
+            {
+               "path": "registry/default/components/comp-1.vue",
+               "type": "registry:component"
+            }
+         ]
+      }
+   ]
 }
