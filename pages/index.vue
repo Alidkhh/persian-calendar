@@ -1,22 +1,11 @@
-<script lang="ts" setup>
-import {
-   type DateValue,
-   createCalendar,
-   getLocalTimeZone,
-   toCalendar,
-   today,
-} from "@internationalized/date";
-
-
-const value = ref(
-   toCalendar(today(getLocalTimeZone()), createCalendar("persian")),
-) as Ref<DateValue>;
-</script>
+<script lang="ts" setup></script>
 
 <template>
-   <div>
-      <div class="flex">
-         <Calendar v-model="value" class="rounded-md border" />
-      </div>
+   <div class="mt-16 flex flex-col items-center justify-center gap-4 text-xl">
+      <p>this is SUI or vue persian calendar</p>
+      <p>i dont know</p>
+      <NuxtLink :to="routes.calendar.route">
+         <Button>{{ routes.calendar.title }}</Button>
+      </NuxtLink>
    </div>
 </template>
