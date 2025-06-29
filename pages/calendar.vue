@@ -10,7 +10,6 @@ import {
 const value = ref(
    toCalendar(today(getLocalTimeZone()), createCalendar("persian")),
 ) as Ref<DateValue>;
-
 </script>
 
 <template>

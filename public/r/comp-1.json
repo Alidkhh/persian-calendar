@@ -1,12 +1,12 @@
 {
-  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
-  "name": "comp-1",
-  "type": "registry:component",
-  "files": [
-    {
-      "path": "registry/default/components/comp-1.vue",
-      "content": "<script lang=\"ts\" setup></script>\r\n\r\n<template>\r\n   <div>hello shadcn</div>\r\n</template>\r\n",
-      "type": "registry:component"
-    }
-  ]
+   "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+   "name": "comp-1",
+   "type": "registry:component",
+   "files": [
+      {
+         "path": "registry/default/components/comp-1.vue",
+         "content": "<script lang=\"ts\" setup></script>\r\n\r\n<template>\r\n   <div>hello shadcn</div>\r\n</template>\r\n",
+         "type": "registry:component"
+      }
+   ]
 }
