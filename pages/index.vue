@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+const config = useRuntimeConfig();
+
 const componenets = [
    { title: routes.calendar.title, route: routes.calendar.route, count: 5 },
 ];
@@ -25,11 +27,11 @@ const componenets = [
             <Button size="xl" class="text-md md:text-xl">Get Started</Button>
          </NuxtLink>
 
-         <NuxtLink :to="routes.calendar.route">
+         <a :href="config.public.GITHUB" target="_blank">
             <Button size="xl" class="text-md md:text-xl" variant="outline"
                >Github</Button
             >
-         </NuxtLink>
+         </a>
       </div>
 
       <!-- <div class="mt-12 grid w-full grid-cols-1 md:grid-cols-3 xl:grid-cols-4">

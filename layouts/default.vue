@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import GithubIcon from "~/components/GithubIcon.vue";
+
+const config = useRuntimeConfig();
 </script>
 
 <template>
@@ -11,11 +13,11 @@ import GithubIcon from "~/components/GithubIcon.vue";
             <NuxtLink to="/" class="text-2xl font-bold"
                >Persian Calendar</NuxtLink
             >
-            <NuxtLink to="https://github.com/Alidkhh/SUI" target="_blank">
+            <a :href="config.public.GITHUB" target="_blank">
                <GithubIcon
                   class="text-foreground/60 hover:text-foreground/80"
                />
-            </NuxtLink>
+            </a>
          </div>
       </div>
       <div class="px-5 pt-12 md:px-[7rem]">

@@ -14,4 +14,10 @@ export default defineNuxtConfig({
       prefix: "",
       componentDir: "./registry/default/ui",
    },
+
+   runtimeConfig: {
+      public: {
+         GITHUB: process.env.NUXT_GITHUB,
+      },
+   },
 });
