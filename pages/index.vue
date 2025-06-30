@@ -21,7 +21,7 @@ const config = useRuntimeConfig();
 
       <div class="mt-16 flex items-center justify-center gap-4">
          <NuxtLink :to="routes.calendar.route">
-            <Button size="xl" class="text-md md:text-xl group">
+            <Button size="xl" class="text-md group md:text-xl">
                Get Started
                <ArrowRight
                   class="size-5 duration-300 group-hover:translate-x-1"

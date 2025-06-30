@@ -13,7 +13,10 @@ const props = defineProps<{
             <DialogTitle>Installation</DialogTitle>
          </DialogHeader>
 
-         <ComponentInstallation class="mt-5 mb-2" :component-name="componentName" />
+         <ComponentInstallation
+            class="mt-5 mb-2"
+            :component-name="componentName"
+         />
       </DialogContent>
    </Dialog>
 </template>

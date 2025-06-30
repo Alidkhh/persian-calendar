@@ -48,7 +48,7 @@ const setActivePackageManager = (clickedItem: PackageManager) => {
 <template>
    <div class="flex w-full flex-col overflow-hidden rounded-xl bg-zinc-900">
       <div class="flex items-center justify-between px-3 pt-2">
-         <div class="flex items-center px-4 gap-1">
+         <div class="flex items-center gap-1 px-4">
             <span
                v-for="item in packageManagers"
                :key="item.name"

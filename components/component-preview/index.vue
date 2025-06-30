@@ -14,7 +14,7 @@ const dialog = ref(false);
          <Tooltip>
             <TooltipTrigger as-child class="absolute end-0 top-0 m-3">
                <Button
-                  class="border-muted-foreground/50 hover:bg-zinc-300 size-7 p-0"
+                  class="border-muted-foreground/50 size-7 p-0 hover:bg-zinc-300"
                   size="icon"
                   variant="outline"
                   @click="dialog = true"
