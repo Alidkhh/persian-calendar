@@ -9,17 +9,19 @@ const dialog = ref(false);
 </script>
 
 <template>
-   <div class="relative flex justify-center rounded-lg bg-zinc-100 p-8">
+   <div
+      class="relative flex justify-center rounded-lg bg-zinc-100 p-8 pt-14 md:pt-8"
+   >
       <TooltipProvider>
          <Tooltip>
             <TooltipTrigger as-child class="absolute end-0 top-0 m-3">
                <Button
-                  class="hover:bg-zinc-300"
-                  size="sm"
+                  class="border-muted-foreground/50 size-7 p-0 hover:bg-zinc-300"
+                  size="icon"
                   variant="outline"
                   @click="dialog = true"
                >
-                  <Code :size="20" />
+                  <Code />
                </Button>
             </TooltipTrigger>
             <TooltipContent>

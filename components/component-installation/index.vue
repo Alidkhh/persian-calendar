@@ -112,6 +112,6 @@ const setActivePackageManager = (clickedItem: PackageManager) => {
 </template>
 <style scoped>
 .install-command {
-   word-spacing: 0.7rem;
+   word-spacing: 0.5rem;
 }
 </style>

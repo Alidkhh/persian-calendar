@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { ArrowRight, Star } from "lucide-vue-next";
+
 const config = useRuntimeConfig();
 
 const componenets = [
@@ -24,13 +26,19 @@ const componenets = [
 
       <div class="mt-16 flex items-center justify-center gap-4">
          <NuxtLink :to="routes.calendar.route">
-            <Button size="xl" class="text-md md:text-xl">Get Started</Button>
+            <Button size="xl" class="text-md group md:text-xl">
+               Get Started
+               <ArrowRight
+                  class="size-5 duration-300 group-hover:translate-x-1"
+               />
+            </Button>
          </NuxtLink>
 
          <a :href="config.public.GITHUB" target="_blank">
-            <Button size="xl" class="text-md md:text-xl" variant="outline"
-               >Github</Button
-            >
+            <Button size="xl" class="text-md md:text-xl group" variant="outline">
+               <Star class="size-5 fill-amber-600 text-amber-600 group-hover:scale-125 group-hover:-rotate-10 duration-300" />
+               Star on GitHub
+            </Button>
          </a>
       </div>
 
