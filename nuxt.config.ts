@@ -17,7 +17,8 @@ export default defineNuxtConfig({
 
    runtimeConfig: {
       public: {
-         GITHUB: process.env.NUXT_GITHUB,
+         github: "",
+         baseUrl: "",
       },
    },
 });

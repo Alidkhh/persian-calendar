@@ -1,9 +1,5 @@
 <script lang="ts" setup>
 const config = useRuntimeConfig();
-
-const componenets = [
-   { title: routes.calendar.title, route: routes.calendar.route, count: 5 },
-];
 </script>
 
 <template>
@@ -27,32 +23,11 @@ const componenets = [
             <Button size="xl" class="text-md md:text-xl">Get Started</Button>
          </NuxtLink>
 
-         <a :href="config.public.GITHUB" target="_blank">
+         <a :href="config.public.github" target="_blank">
             <Button size="xl" class="text-md md:text-xl" variant="outline"
                >Github</Button
             >
          </a>
       </div>
-
-      <!-- <div class="mt-12 grid w-full grid-cols-1 md:grid-cols-3 xl:grid-cols-4">
-         <template v-for="component in componenets">
-            <NuxtLink
-               class="group flex flex-col overflow-hidden rounded-xl border border-zinc-300 shadow-xl shadow-zinc-300 duration-300 hover:shadow-2xl hover:shadow-zinc-400"
-               :to="component.route"
-            >
-               <NuxtPicture
-                  src="/components/calendar-date-picker.png"
-                  class="overflow-hidden bg-zinc-300"
-                  :imgAttrs="{
-                     class: 'group-hover:scale-110 duration-300 group-hover:rotate-6 w-full',
-                  }"
-               />
-               <div class="flex flex-col items-center gap-3 p-4">
-                  <span>Calendar & Date picker</span>
-                  <span class="text-sm">{{ component.count }} components</span>
-               </div>
-            </NuxtLink>
-         </template>
-      </div> -->
    </div>
 </template>

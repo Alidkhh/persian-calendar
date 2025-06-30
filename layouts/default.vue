@@ -13,7 +13,7 @@ const config = useRuntimeConfig();
             <NuxtLink to="/" class="text-2xl font-bold"
                >Persian Calendar</NuxtLink
             >
-            <a :href="config.public.GITHUB" target="_blank">
+            <a :href="config.public.github" target="_blank">
                <GithubIcon
                   class="text-foreground/60 hover:text-foreground/80"
                />

@@ -6,6 +6,8 @@ const props = defineProps<{
    componentName: string;
 }>();
 
+const config = useRuntimeConfig();
+
 const { text, copy, copied, isSupported } = useClipboard();
 
 type PackageManager = {
@@ -17,22 +19,22 @@ type PackageManager = {
 const packageManagers = ref<PackageManager[]>([
    {
       name: "pnpm",
-      command: `pnpm dlx shadcn-vue@latest add https://www.originui-vue.com/r/${props.componentName}.json`,
+      command: `pnpm dlx shadcn-vue@latest add ${config.public.baseUrl}/r/${props.componentName}.json`,
       isActive: true,
    },
    {
       name: "yarn",
-      command: `npx shadcn-vue@latest add https://www.originui-vue.com/r/${props.componentName}.json`,
+      command: `npx shadcn-vue@latest add ${config.public.baseUrl}/r/${props.componentName}.json`,
       isActive: false,
    },
    {
       name: "npm",
-      command: `npx shadcn-vue@latest add https://www.originui-vue.com/r/${props.componentName}.json`,
+      command: `npx shadcn-vue@latest add ${config.public.baseUrl}/r/${props.componentName}.json`,
       isActive: false,
    },
    {
       name: "bun",
-      command: `bunx --bun shadcn-vue@latest add https://www.originui-vue.com/r/${props.componentName}.json`,
+      command: `bunx --bun shadcn-vue@latest add ${config.public.baseUrl}/r/${props.componentName}.json`,
       isActive: false,
    },
 ]);
@@ -44,10 +46,8 @@ const setActivePackageManager = (clickedItem: PackageManager) => {
 </script>
 
 <template>
-   <div
-      class="flex w-full flex-col overflow-hidden rounded-xl bg-zinc-900"
-   >
-      <div class="flex items-center justify-between pt-2 px-3">
+   <div class="flex w-full flex-col overflow-hidden rounded-xl bg-zinc-900">
+      <div class="flex items-center justify-between px-3 pt-2">
          <div class="flex items-center gap-7 px-4">
             <span
                v-for="item in packageManagers"
@@ -94,7 +94,7 @@ const setActivePackageManager = (clickedItem: PackageManager) => {
       <Separator class="mt-2 bg-zinc-700" />
 
       <div class="px-1">
-         <ScrollArea class="w-full pb-2 px-2">
+         <ScrollArea class="w-full px-2 pb-2">
             <p
                v-for="item in packageManagers"
                :key="item.name"
