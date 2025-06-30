@@ -10,6 +10,10 @@ import {
 const value = ref(
    toCalendar(today(getLocalTimeZone()), createCalendar("persian")),
 ) as Ref<DateValue>;
+
+const isDateUnavailable = (date) => {
+   return date.day === 17 || date.day === 18;
+};
 </script>
 
 <template>
@@ -18,7 +22,10 @@ const value = ref(
    >
       <template v-for="i in 5">
          <ComponentPreview :componentName="`test-${i}`">
-            <Calendar v-model="value" />
+            <Calendar
+               v-model="value"
+               :is-date-unavailable="isDateUnavailable"
+            />
          </ComponentPreview>
       </template>
    </div>

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { HTMLAttributes } from "vue";
 import { reactiveOmit } from "@vueuse/core";
-import { ChevronRight } from "lucide-vue-next";
+import { ChevronLeft } from "lucide-vue-next";
 import { CalendarNext, type CalendarNextProps, useForwardProps } from "reka-ui";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/registry/default/ui/button";
@@ -21,7 +21,7 @@ const forwardedProps = useForwardProps(delegatedProps);
       :class="
          cn(
             buttonVariants({ variant: 'outline' }),
-            'absolute right-1',
+            'absolute left-1',
             'size-7 bg-transparent p-0 opacity-50 hover:opacity-100',
             props.class,
          )
@@ -29,7 +29,7 @@ const forwardedProps = useForwardProps(delegatedProps);
       v-bind="forwardedProps"
    >
       <slot>
-         <ChevronRight class="size-4" />
+         <ChevronLeft class="size-4" />
       </slot>
    </CalendarNext>
 </template>

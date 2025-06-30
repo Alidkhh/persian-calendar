@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Clipboard, Check } from "lucide-vue-next";
+import { Copy, Check } from "lucide-vue-next";
 import { useClipboard } from "@vueuse/core";
 
 const props = defineProps<{
@@ -44,17 +44,19 @@ const setActivePackageManager = (clickedItem: PackageManager) => {
 </script>
 
 <template>
-   <div class="flex flex-col rounded-xl bg-zinc-200 px-3 py-2">
-      <div class="flex items-center justify-between">
+   <div
+      class="flex w-full flex-col overflow-hidden rounded-xl bg-zinc-900"
+   >
+      <div class="flex items-center justify-between pt-2 px-3">
          <div class="flex items-center gap-7 px-4">
             <span
                v-for="item in packageManagers"
                :key="item.name"
                :class="[
-                  'relative cursor-pointer',
+                  'relative cursor-pointer select-none',
                   item.isActive
-                     ? `text-foreground after:content-[' '] after:bg-foreground after:absolute after:start-1/2 after:-bottom-[calc(0.8rem-1px)] after:h-[1px] after:w-[140%] after:-translate-x-1/2`
-                     : 'text-muted-foreground',
+                     ? `after:content-[' '] text-white after:absolute after:start-1/2 after:-bottom-[calc(0.8rem-1px)] after:h-[2px] after:w-[140%] after:-translate-x-1/2 after:bg-white`
+                     : 'text-zinc-400',
                ]"
                @click="setActivePackageManager(item)"
                >{{ item.name }}</span
@@ -65,7 +67,7 @@ const setActivePackageManager = (clickedItem: PackageManager) => {
             <Tooltip>
                <TooltipTrigger as-child>
                   <Button
-                     class="hover:bg-zinc-300"
+                     class="hover:bg-unset hover:text-unset text-white"
                      size="sm"
                      variant="ghost"
                      @click="
@@ -76,10 +78,10 @@ const setActivePackageManager = (clickedItem: PackageManager) => {
                      "
                   >
                      <template v-if="copied">
-                        <Check :size="20" class="text-green-700" />
+                        <Check :size="20" class="text-green-500" />
                      </template>
                      <template v-else>
-                        <Clipboard :size="20" />
+                        <Copy :size="20" />
                      </template>
                   </Button>
                </TooltipTrigger>
@@ -89,19 +91,22 @@ const setActivePackageManager = (clickedItem: PackageManager) => {
             </Tooltip>
          </TooltipProvider>
       </div>
-      <Separator class="bg-muted-foreground mt-2" />
+      <Separator class="mt-2 bg-zinc-700" />
 
-      <div class="mt-4 mb-2">
-         <p
-            v-for="item in packageManagers"
-            :key="item.name"
-            :class="[
-               !item.isActive ? 'hidden' : '',
-               'install-command px-2 text-sm font-bold',
-            ]"
-         >
-            {{ item.command }}
-         </p>
+      <div class="px-1">
+         <ScrollArea class="w-full pb-2 px-2">
+            <p
+               v-for="item in packageManagers"
+               :key="item.name"
+               :class="[
+                  !item.isActive ? 'hidden' : '',
+                  'install-command px-2 pt-4 pb-2 font-mono text-sm font-bold text-nowrap text-white',
+               ]"
+            >
+               {{ item.command }}
+            </p>
+            <ScrollBar orientation="horizontal" />
+         </ScrollArea>
       </div>
    </div>
 </template>

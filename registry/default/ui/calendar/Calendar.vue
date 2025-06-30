@@ -27,7 +27,7 @@ const props = defineProps<
 >();
 const emits = defineEmits<CalendarRootEmits>();
 
-const delegatedProps = reactiveOmit(props, "class");
+const delegatedProps = reactiveOmit(props, "class", "locale");
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits);
 </script>
@@ -42,8 +42,8 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
             props.class,
          )
       "
-      v-bind="forwarded"
       locale="fa-IR"
+      v-bind="forwarded"
    >
       <CalendarHeader>
          <CalendarHeading />

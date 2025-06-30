@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Github } from "lucide-vue-next";
+import GithubIcon from "~/components/GithubIcon.vue";
 </script>
 
 <template>
@@ -8,9 +8,13 @@ import { Github } from "lucide-vue-next";
          class="bg-background sticky top-0 z-10 border-b-1 px-5 py-3 shadow-md md:px-[7rem]"
       >
          <div class="flex items-center justify-between">
-            <NuxtLink to="/" class="text-3xl font-bold">SUI</NuxtLink>
+            <NuxtLink to="/" class="text-2xl font-bold"
+               >Persian Calendar</NuxtLink
+            >
             <NuxtLink to="https://github.com/Alidkhh/SUI" target="_blank">
-               <Github class="text-primary"></Github>
+               <GithubIcon
+                  class="text-foreground/60 hover:text-foreground/80"
+               />
             </NuxtLink>
          </div>
       </div>
