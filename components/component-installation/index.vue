@@ -48,14 +48,14 @@ const setActivePackageManager = (clickedItem: PackageManager) => {
 <template>
    <div class="flex w-full flex-col overflow-hidden rounded-xl bg-zinc-900">
       <div class="flex items-center justify-between px-3 pt-2">
-         <div class="flex items-center gap-7 px-4">
+         <div class="flex items-center px-4 gap-1">
             <span
                v-for="item in packageManagers"
                :key="item.name"
                :class="[
-                  'relative cursor-pointer select-none',
+                  'relative w-14 cursor-pointer text-center select-none',
                   item.isActive
-                     ? `after:content-[' '] text-white after:absolute after:start-1/2 after:-bottom-[calc(0.8rem-1px)] after:h-[2px] after:w-[140%] after:-translate-x-1/2 after:bg-white`
+                     ? `after:content-[' '] text-white after:absolute after:start-1/2 after:-bottom-[calc(0.8rem-1px)] after:h-[2px] after:w-[110%] after:-translate-x-1/2 after:bg-white`
                      : 'text-zinc-400',
                ]"
                @click="setActivePackageManager(item)"
@@ -112,6 +112,6 @@ const setActivePackageManager = (clickedItem: PackageManager) => {
 </template>
 <style scoped>
 .install-command {
-   word-spacing: 0.7rem;
+   word-spacing: 0.5rem;
 }
 </style>

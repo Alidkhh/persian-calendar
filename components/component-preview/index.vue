@@ -14,12 +14,12 @@ const dialog = ref(false);
          <Tooltip>
             <TooltipTrigger as-child class="absolute end-0 top-0 m-3">
                <Button
-                  class="hover:bg-zinc-300"
-                  size="sm"
+                  class="border-muted-foreground/50 hover:bg-zinc-300 size-7 p-0"
+                  size="icon"
                   variant="outline"
                   @click="dialog = true"
                >
-                  <Code :size="20" />
+                  <Code />
                </Button>
             </TooltipTrigger>
             <TooltipContent>
