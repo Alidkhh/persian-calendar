@@ -13,6 +13,7 @@
    },
    "dependencies": {
       "@nuxt/fonts": "^0.11.4",
+      "@nuxt/image": "^1.10.0",
       "@tailwindcss/vite": "^4.1.11",
       "@vueuse/core": "^13.4.0",
       "class-variance-authority": "^0.7.1",

@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       plugins: [tailwindcss()],
    },
 
-   modules: ["@nuxt/fonts", "shadcn-nuxt"],
+   modules: ["@nuxt/fonts", "shadcn-nuxt", "@nuxt/image"],
 
    shadcn: {
       prefix: "",
