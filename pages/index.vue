@@ -24,9 +24,16 @@ const config = useRuntimeConfig();
          </NuxtLink>
 
          <a :href="config.public.github" target="_blank">
-            <Button size="xl" class="text-md md:text-xl" variant="outline"
-               >Github</Button
+            <Button
+               size="xl"
+               class="text-md group md:text-xl"
+               variant="outline"
             >
+               <Star
+                  class="size-5 fill-amber-500 text-amber-500 duration-300 group-hover:scale-[120%]"
+               />
+               Star on GitHub
+            </Button>
          </a>
       </div>
    </div>
