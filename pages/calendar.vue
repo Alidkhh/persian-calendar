@@ -6,6 +6,7 @@ import {
    toCalendar,
    today,
 } from "@internationalized/date";
+import Comp2 from "~/registry/default/components/Comp-2.vue";
 
 const value = ref(
    toCalendar(today(getLocalTimeZone()), createCalendar("persian")),
@@ -22,10 +23,7 @@ const isDateUnavailable = (date) => {
    >
       <template v-for="i in 5">
          <ComponentPreview :componentName="`test-${i}`">
-            <Calendar
-               v-model="value"
-               :is-date-unavailable="isDateUnavailable"
-            />
+            <Comp2 v-model="value" :is-date-unavailable="isDateUnavailable" />
          </ComponentPreview>
       </template>
    </div>

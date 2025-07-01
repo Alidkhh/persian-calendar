@@ -1,7 +1,12 @@
+<script setup lang="ts">
+import { ConfigProvider } from "reka-ui";
+</script>
 <template>
    <div>
       <NuxtLayout>
-         <NuxtPage />
+         <ConfigProvider dir="rtl">
+            <NuxtPage />
+         </ConfigProvider>
       </NuxtLayout>
    </div>
 </template>

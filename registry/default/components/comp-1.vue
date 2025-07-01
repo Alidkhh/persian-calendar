@@ -20,7 +20,7 @@ import {
    CalendarHeading,
    CalendarNextButton,
    CalendarPrevButton,
-} from '@/registry/default/ui/calendar';
+} from "@/registry/default/ui/calendar";
 
 const props = defineProps<
    CalendarRootProps & { class?: HTMLAttributes["class"] }
@@ -38,7 +38,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
       data-slot="calendar"
       :class="
          cn(
-            'bg-background dir-rtl rounded-lg border border-neutral-300 p-3',
+            'bg-background rounded-lg border border-neutral-300 p-3',
             props.class,
          )
       "
