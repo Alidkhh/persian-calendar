@@ -137,3 +137,11 @@
 body {
    font-family: Estedad !important;
 }
+
+.dir-rtl {
+   direction: rtl;
+}
+
+.dir-ltr {
+   direction: ltr;
+}
