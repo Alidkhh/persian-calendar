@@ -8,5 +8,6 @@ export { default as CalendarGridRow } from "./CalendarGridRow.vue";
 export { default as CalendarHeadCell } from "./CalendarHeadCell.vue";
 export { default as CalendarHeader } from "./CalendarHeader.vue";
 export { default as CalendarHeading } from "./CalendarHeading.vue";
+export { default as CalendarFooter } from "./CalendarFooter.vue";
 export { default as CalendarNextButton } from "./CalendarNextButton.vue";
 export { default as CalendarPrevButton } from "./CalendarPrevButton.vue";

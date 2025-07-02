@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import type { HTMLAttributes } from "vue";
+import { reactiveOmit } from "@vueuse/core";
+
 import {
    CalendarCell,
    CalendarCellTrigger,
@@ -9,6 +11,7 @@ import {
    CalendarGridRow,
    CalendarHeadCell,
    CalendarHeader,
+   CalendarFooter,
 } from "@/registry/default/ui/calendar";
 import { cn } from "@/lib/utils";
 import {
@@ -16,18 +19,46 @@ import {
    getLocalTimeZone,
    today,
    type DateValue,
+   createCalendar,
    PersianCalendar,
    toCalendar,
+   parseDate,
 } from "@internationalized/date";
-import { CalendarRoot, type CalendarRootProps } from "reka-ui";
+import {
+   CalendarRoot,
+   type CalendarRootEmits,
+   type CalendarRootProps,
+   useForwardPropsEmits,
+} from "reka-ui";
 import SelectContentGrid from "../ui/select/SelectContentGrid.vue";
 import SelectItemButton from "../ui/select/SelectItemButton.vue";
 
-const todayDate = toCalendar(today(getLocalTimeZone()), new PersianCalendar());
+const props = withDefaults(
+   defineProps<
+      CalendarRootProps & {
+         class?: HTMLAttributes["class"];
+         showFooter?: boolean;
+      }
+   >(),
+   {
+      locale: "fa-IR",
+      showFooter: false,
+   },
+);
 
-const props = defineProps<
-   CalendarRootProps & { class?: HTMLAttributes["class"] }
->();
+const emits = defineEmits<CalendarRootEmits>();
+
+const delegatedProps = reactiveOmit(props, "class");
+
+const forwarded = useForwardPropsEmits(delegatedProps, emits);
+
+const todayDate = toCalendar(
+   today(getLocalTimeZone()),
+   createCalendar("persian"),
+);
+
+const modelValue = ref(todayDate) as Ref<DateValue>;
+
 const selectedDate = ref({
    month: todayDate.month,
    year: todayDate.year,
@@ -56,16 +87,17 @@ const years = Array.from({ length: 40 }, (_, i) => todayDate.year - 20 + i);
 <template>
    <div>
       <CalendarRoot
-         v-slot="{ weekDays, grid, weekStartsOn }"
          data-slot="calendar"
-         :placeholder="placeholder"
+         v-slot="{ weekDays, grid, weekStartsOn }"
          :class="
             cn(
                'bg-background rounded-lg border border-neutral-300 p-3',
                props.class,
             )
          "
-         locale="fa-IR"
+         v-bind="forwarded"
+         v-model="modelValue"
+         :placeholder="placeholder"
       >
          <CalendarHeader class="flex justify-between">
             <div class="grid w-full grid-cols-2 items-center gap-2">
@@ -130,6 +162,7 @@ const years = Array.from({ length: 40 }, (_, i) => todayDate.year - 20 + i);
                </CalendarGridBody>
             </CalendarGrid>
          </div>
+         <CalendarFooter v-if="showFooter" v-model="modelValue" />
       </CalendarRoot>
    </div>
 </template>

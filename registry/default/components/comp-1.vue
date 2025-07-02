@@ -20,33 +20,59 @@ import {
    CalendarHeading,
    CalendarNextButton,
    CalendarPrevButton,
+   CalendarFooter,
 } from "@/registry/default/ui/calendar";
 
-const props = defineProps<
-   CalendarRootProps & { class?: HTMLAttributes["class"] }
->();
+import {
+   type DateValue,
+   createCalendar,
+   getLocalTimeZone,
+   toCalendar,
+   today,
+} from "@internationalized/date";
+
+const props = withDefaults(
+   defineProps<
+      CalendarRootProps & {
+         class?: HTMLAttributes["class"];
+         showFooter?: boolean;
+      }
+   >(),
+   {
+      locale: "fa-IR",
+      showFooter: true,
+   },
+);
+
 const emits = defineEmits<CalendarRootEmits>();
 
-const delegatedProps = reactiveOmit(props, "class", "locale");
+const delegatedProps = reactiveOmit(props, "class");
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits);
+
+const todayDate = toCalendar(
+   today(getLocalTimeZone()),
+   createCalendar("persian"),
+);
+
+const modelValue = ref(todayDate) as Ref<DateValue>;
 </script>
 
 <template>
    <CalendarRoot
-      v-slot="{ weekDays, grid }"
       data-slot="calendar"
+      v-slot="{ weekDays, grid }"
       :class="
          cn(
             'bg-background rounded-lg border border-neutral-300 p-3',
             props.class,
          )
       "
-      locale="fa-IR"
       v-bind="forwarded"
+      v-model="modelValue"
    >
       <CalendarHeader>
-         <CalendarHeading />
+         <CalendarHeading class="dir-ltr" />
 
          <div class="flex items-center gap-1">
             <CalendarPrevButton />
@@ -83,5 +109,6 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
             </CalendarGridBody>
          </CalendarGrid>
       </div>
+      <CalendarFooter v-if="showFooter" v-model="modelValue" />
    </CalendarRoot>
 </template>
