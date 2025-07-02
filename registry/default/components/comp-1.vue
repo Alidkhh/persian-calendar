@@ -29,6 +29,8 @@ import {
    getLocalTimeZone,
    toCalendar,
    today,
+   CalendarDate,
+   PersianCalendar,
 } from "@internationalized/date";
 
 const props = withDefaults(
@@ -56,6 +58,27 @@ const todayDate = toCalendar(
 );
 
 const modelValue = ref(todayDate) as Ref<DateValue>;
+
+const selectedDate = ref({
+   year: todayDate.year,
+   month: todayDate.month,
+});
+
+const placeholder = computed({
+   get: () =>
+      new CalendarDate(
+         new PersianCalendar(),
+         selectedDate.value.year,
+         selectedDate.value.month,
+         1,
+      ),
+   set: (newDate: DateValue) => {
+      selectedDate.value = {
+         year: newDate.year,
+         month: newDate.month,
+      };
+   },
+});
 </script>
 
 <template>
@@ -70,6 +93,7 @@ const modelValue = ref(todayDate) as Ref<DateValue>;
       "
       v-bind="forwarded"
       v-model="modelValue"
+      :placeholder="placeholder"
    >
       <CalendarHeader>
          <CalendarHeading class="dir-ltr" />
@@ -109,6 +133,10 @@ const modelValue = ref(todayDate) as Ref<DateValue>;
             </CalendarGridBody>
          </CalendarGrid>
       </div>
-      <CalendarFooter v-if="showFooter" v-model="modelValue" />
+      <CalendarFooter
+         v-if="showFooter"
+         v-model="modelValue"
+         v-model:selected-date="selectedDate"
+      />
    </CalendarRoot>
 </template>
