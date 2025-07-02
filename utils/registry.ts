@@ -1,7 +1,7 @@
 import registry from "~~/registry.json";
 import type { RegistryItem } from "shadcn-vue/registry";
 
-const components = [...registry.items] as unknown as RegistryItem[];
+export const components = [...registry.items] as unknown as RegistryItem[];
 
 export function getComponentsByNames(names: string[]): RegistryItem[] {
    const componentsMap = new Map(components.map((comp) => [comp.name, comp]));

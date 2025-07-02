@@ -20,6 +20,8 @@ import {
    toCalendar,
 } from "@internationalized/date";
 import { CalendarRoot, type CalendarRootProps } from "reka-ui";
+import SelectContentGrid from "../ui/select/SelectContentGrid.vue";
+import SelectItemButton from "../ui/select/SelectItemButton.vue";
 
 const todayDate = toCalendar(today(getLocalTimeZone()), new PersianCalendar());
 
@@ -48,7 +50,7 @@ const monthNames = Array.from({ length: 12 }, (_, i) =>
       .toLocaleString("fa-IR", { month: "long" }),
 );
 
-const years = Array.from({ length: 20 }, (_, i) => todayDate.year - 10 + i);
+const years = Array.from({ length: 40 }, (_, i) => todayDate.year - 20 + i);
 </script>
 
 <template>
@@ -71,29 +73,29 @@ const years = Array.from({ length: 20 }, (_, i) => todayDate.year - 10 + i);
                   <SelectTrigger size="sm" class="w-full">
                      <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
-                     <SelectItem
+                  <SelectContentGrid :grid-cols="3">
+                     <SelectItemButton
                         v-for="(month, i) in monthNames"
                         :key="i"
                         :value="i + 1"
                      >
                         {{ month }}
-                     </SelectItem>
-                  </SelectContent>
+                     </SelectItemButton>
+                  </SelectContentGrid>
                </Select>
                <Select v-model="selectedDate.year">
                   <SelectTrigger size="sm" class="w-full">
                      <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
-                     <SelectItem
+                  <SelectContentGrid :grid-cols="3">
+                     <SelectItemButton
                         v-for="year in years"
                         :key="year"
                         :value="year"
                      >
                         {{ year }}
-                     </SelectItem>
-                  </SelectContent>
+                     </SelectItemButton>
+                  </SelectContentGrid>
                </Select>
             </div>
          </CalendarHeader>
@@ -129,16 +131,5 @@ const years = Array.from({ length: 20 }, (_, i) => todayDate.year - 10 + i);
             </CalendarGrid>
          </div>
       </CalendarRoot>
-      <p class="text-muted-foreground mt-4 text-center text-xs">
-         Monthly / yearly selects -
-         <a
-            class="hover:text-foreground underline"
-            href="https://reka-ui.com/docs/components/calendar#calendar"
-            target="_blank"
-            rel="noopener nofollow"
-         >
-            Reka UI Calendar
-         </a>
-      </p>
    </div>
 </template>
