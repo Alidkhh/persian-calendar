@@ -9,7 +9,7 @@ const dialog = ref(false);
 </script>
 
 <template>
-   <div class="relative flex justify-center rounded-lg bg-zinc-100 p-8">
+   <div class="relative flex justify-center rounded-lg bg-zinc-100 p-12 md:p-8">
       <TooltipProvider>
          <Tooltip>
             <TooltipTrigger as-child class="absolute end-0 top-0 m-3">

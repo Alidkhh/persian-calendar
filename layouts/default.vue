@@ -10,7 +10,7 @@ const config = useRuntimeConfig();
          class="bg-background sticky top-0 z-10 border-b-1 px-5 py-3 shadow-md md:px-[7rem]"
       >
          <div class="flex items-center justify-between">
-            <NuxtLink to="/" class="text-2xl font-bold"
+            <NuxtLink to="/" class="font-heading text-2xl "
                >Persian Calendar</NuxtLink
             >
             <a :href="config.public.github" target="_blank">
