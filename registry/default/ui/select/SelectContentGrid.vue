@@ -17,9 +17,15 @@ defineOptions({
 });
 
 const props = withDefaults(
-   defineProps<SelectContentProps & { class?: HTMLAttributes["class"] }>(),
+   defineProps<
+      SelectContentProps & {
+         class?: HTMLAttributes["class"];
+         gridCols?: number;
+      }
+   >(),
    {
       position: "popper",
+      gridCols: 3,
       align: "center",
    },
 );
@@ -50,7 +56,8 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
                cn(
                   'p-1',
                   position === 'popper' &&
-                     'h-[var(--reka-select-trigger-height)] w-full min-w-[var(--reka-select-trigger-width)] scroll-my-1',
+                     'grid h-[var(--reka-select-trigger-height)] w-full min-w-[var(--reka-select-trigger-width)] scroll-my-1 gap-1',
+                  `grid-cols-${gridCols}`,
                )
             "
          >
