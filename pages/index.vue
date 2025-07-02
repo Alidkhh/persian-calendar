@@ -9,19 +9,18 @@ const config = useRuntimeConfig();
          <h1
             class="font-heading text-foreground mb-4 text-4xl/[1.1] font-bold tracking-tight md:text-5xl/[1.1]"
          >
-            Persian Calendar & Date picker components built with Tailwind CSS
-            and Shadcn for
+            Persian Calendar & Date picker components for
             <span class="text-vue-color">Vue</span>
          </h1>
-         <p>
-            An open-source collection of copy-and-paste Calendar components for
-            quickly build application UIs
+         <p class="font-sans">
+            An open-source collection of copy-and-paste Calendar components
+            built with Tailwind CSS and Shadcn
          </p>
       </div>
 
       <div class="mt-16 flex items-center justify-center gap-4">
          <NuxtLink :to="routes.calendar.route">
-            <Button size="xl" class="text-md group md:text-xl">
+            <Button size="xl" class="text-md group font-sans md:text-xl">
                Get Started
                <ArrowRight
                   class="size-5 duration-300 group-hover:translate-x-1"
@@ -32,7 +31,7 @@ const config = useRuntimeConfig();
          <a :href="config.public.github" target="_blank">
             <Button
                size="xl"
-               class="text-md group md:text-xl"
+               class="text-md group font-sans md:text-xl"
                variant="outline"
             >
                <Star

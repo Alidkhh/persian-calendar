@@ -18,6 +18,13 @@ export default defineNuxtConfig({
 
    modules: ["@nuxt/fonts", "shadcn-nuxt", "@nuxt/image"],
 
+   fonts: {
+      families: [
+         { name: "Inter", provider: "google", global: true },
+         { name: "Outfit", provider: "google", global: true },
+      ],
+   },
+
    shadcn: {
       prefix: "",
       componentDir: "./registry/default/ui",
