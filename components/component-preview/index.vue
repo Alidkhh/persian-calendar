@@ -1,15 +1,18 @@
 <script lang="ts" setup>
 import { Code } from "lucide-vue-next";
+import type { RegistryItem } from "shadcn-vue/registry";
 
 const props = defineProps<{
-   componentName: string;
+   component: RegistryItem;
 }>();
 
 const dialog = ref(false);
 </script>
 
 <template>
-   <div class="relative flex justify-center rounded-lg bg-zinc-100 p-12 md:p-8">
+   <div
+      class="relative flex flex-col items-center justify-center rounded-lg bg-zinc-100 p-12 md:p-8 pb-5"
+   >
       <TooltipProvider>
          <Tooltip>
             <TooltipTrigger as-child class="absolute end-0 top-0 m-3">
@@ -29,10 +32,13 @@ const dialog = ref(false);
       </TooltipProvider>
 
       <slot></slot>
+      <div class="mt-4 text-muted-foreground text-xs">
+         <p>{{ component.description }}</p>
+      </div>
    </div>
 
    <ComponentInstallationDialog
       v-model:open="dialog"
-      :component-name="componentName"
+      :component-name="component.name"
    />
 </template>

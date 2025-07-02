@@ -17,15 +17,20 @@ const model = defineModel<DateValue>({
    required: true,
 });
 
-const footerDateString = computed(() =>
-   toCalendar(parseDate(String(model.value)), createCalendar("persian"))
-      .toDate(getLocalTimeZone())
-      .toLocaleString("fa-IR", {
-         year: "numeric",
-         month: "numeric",
-         day: "numeric",
-      }),
-);
+const footerDateString = computed(() => {
+   if (model.value) {
+      return toCalendar(
+         parseDate(String(model.value)),
+         createCalendar("persian"),
+      )
+         .toDate(getLocalTimeZone())
+         .toLocaleString("fa-IR", {
+            year: "numeric",
+            month: "numeric",
+            day: "numeric",
+         });
+   }
+});
 </script>
 
 <template>

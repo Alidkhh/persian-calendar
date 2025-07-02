@@ -6,6 +6,7 @@
       {
          "name": "Comp-1",
          "type": "registry:component",
+         "description": "Calendar",
          "files": [
             {
                "path": "registry/default/components/Comp-1.vue",
@@ -16,6 +17,7 @@
       {
          "name": "Comp-2",
          "type": "registry:component",
+         "description": "Monthly / yearly selects",
          "files": [
             {
                "path": "registry/default/components/Comp-2.vue",
