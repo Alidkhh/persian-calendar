@@ -162,7 +162,11 @@ const years = Array.from({ length: 40 }, (_, i) => todayDate.year - 20 + i);
                </CalendarGridBody>
             </CalendarGrid>
          </div>
-         <CalendarFooter v-if="showFooter" v-model="modelValue" />
+         <CalendarFooter
+            v-if="showFooter"
+            v-model="modelValue"
+            v-model:selected-date="selectedDate"
+         />
       </CalendarRoot>
    </div>
 </template>

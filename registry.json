@@ -12,6 +12,10 @@
                "path": "registry/default/components/Comp-1.vue",
                "type": "registry:component"
             }
+         ],
+         "registryDependencies": [
+            "button",
+            "https://persian-calendar.alidkhh.workers.dev/r/Comp-2.json"
          ]
       },
       {
