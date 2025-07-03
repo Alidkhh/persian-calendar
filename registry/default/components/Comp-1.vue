@@ -77,7 +77,6 @@ const placeholder = computed({
       };
    },
 });
-
 </script>
 
 <template>

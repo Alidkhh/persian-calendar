@@ -11,7 +11,7 @@ const dialog = ref(false);
 
 <template>
    <div
-      class="relative flex flex-col items-center justify-center rounded-lg bg-zinc-100 p-12 md:p-8 pb-5"
+      class="relative flex flex-col items-center justify-center rounded-lg bg-zinc-100 p-12 pb-5 md:p-8"
    >
       <TooltipProvider>
          <Tooltip>
@@ -32,7 +32,7 @@ const dialog = ref(false);
       </TooltipProvider>
 
       <slot></slot>
-      <div class="mt-4 text-muted-foreground text-xs">
+      <div class="text-muted-foreground mt-4 text-xs">
          <p>{{ component.description }}</p>
       </div>
    </div>

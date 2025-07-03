@@ -32,7 +32,7 @@ const config = useRuntimeConfig();
 
          <a :href="config.public.github" target="_blank">
             <Button
-               class="text-md group h-12 rounded-lg px-7 font-sans has-[>svg]:px-5 border-muted-foreground md:text-xl"
+               class="text-md group border-muted-foreground h-12 rounded-lg px-7 font-sans has-[>svg]:px-5 md:text-xl"
                variant="outline"
             >
                <Star

@@ -30,7 +30,6 @@ const forwardedProps = useForwardProps(delegatedProps);
          )
       "
    >
-
       <SelectItemText>
          <slot />
       </SelectItemText>
