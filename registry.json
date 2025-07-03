@@ -48,7 +48,20 @@
                "path": "registry/default/components/Comp-4.vue",
                "type": "registry:component"
             }
-         ]
+         ],
+         "registryDependencies": ["button", "calendar"]
+      },
+      {
+         "name": "Comp-5",
+         "type": "registry:component",
+         "description": "Range Calendar",
+         "files": [
+            {
+               "path": "registry/default/components/Comp-5.vue",
+               "type": "registry:component"
+            }
+         ],
+         "registryDependencies": ["button", "range-calendar"]
       }
    ]
 }
