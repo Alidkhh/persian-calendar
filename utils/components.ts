@@ -13,7 +13,7 @@ export const categories: ComponentCategory[] = [
          { name: "Comp-1" },
          { name: "Comp-2" },
          { name: "Comp-3" },
-         { name: "Comp-5" },
+         { name: "Comp-4" },
       ],
    },
 ];

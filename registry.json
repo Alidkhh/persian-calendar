@@ -40,12 +40,12 @@
          "registryDependencies": ["button", "calendar"]
       },
       {
-         "name": "Comp-5",
+         "name": "Comp-4",
          "type": "registry:component",
          "description": "Monthly / yearly selects",
          "files": [
             {
-               "path": "registry/default/components/Comp-2.vue",
+               "path": "registry/default/components/Comp-4.vue",
                "type": "registry:component"
             }
          ]
