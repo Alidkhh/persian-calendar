@@ -18,6 +18,18 @@
       {
          "name": "Comp-2",
          "type": "registry:component",
+         "description": "Calendar with footer",
+         "files": [
+            {
+               "path": "registry/default/components/Comp-2.vue",
+               "type": "registry:component"
+            }
+         ],
+         "registryDependencies": ["button", "calendar"]
+      },
+      {
+         "name": "Comp-5",
+         "type": "registry:component",
          "description": "Monthly / yearly selects",
          "files": [
             {

@@ -29,7 +29,6 @@ import {
    today,
    CalendarDate,
    PersianCalendar,
-   parseDate,
 } from "@internationalized/date";
 
 const props = withDefaults(
@@ -79,28 +78,6 @@ const placeholder = computed({
    },
 });
 
-const footerDateString = computed(() => {
-   if (modelValue.value) {
-      return toCalendar(
-         parseDate(String(modelValue.value)),
-         createCalendar("persian"),
-      )
-         .toDate(getLocalTimeZone())
-         .toLocaleString("fa-IR", {
-            year: "numeric",
-            month: "numeric",
-            day: "numeric",
-         });
-   }
-});
-
-const setToday = () => {
-   modelValue.value = todayDate;
-   selectedDate.value = {
-      year: todayDate.year,
-      month: todayDate.month,
-   };
-};
 </script>
 
 <template>
@@ -155,16 +132,6 @@ const setToday = () => {
             </CalendarGridBody>
          </CalendarGrid>
       </div>
-
-      <template v-if="showFooter">
-         <Separator class="my-3" />
-         <div class="flex items-center justify-between">
-            <span class="text-xs">{{ footerDateString }}</span>
-            <Button class="h-6 rounded-md px-2 text-xs" @click="setToday"
-               >اکنون</Button
-            >
-         </div>
-      </template>
    </CalendarRoot>
 </template>
 <style scoped>
