@@ -31,6 +31,7 @@
    },
    "devDependencies": {
       "prettier": "^3.6.1",
-      "prettier-plugin-tailwindcss": "^0.6.13"
+      "prettier-plugin-tailwindcss": "^0.6.13",
+      "shiki": "^3.7.0"
    }
 }

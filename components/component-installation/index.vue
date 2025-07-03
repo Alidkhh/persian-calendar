@@ -1,14 +1,9 @@
 <script lang="ts" setup>
-import { Copy, Check } from "lucide-vue-next";
-import { useClipboard } from "@vueuse/core";
-
 const props = defineProps<{
    componentName: string;
 }>();
 
 const config = useRuntimeConfig();
-
-const { text, copy, copied, isSupported } = useClipboard();
 
 type PackageManager = {
    name: string;
@@ -63,33 +58,9 @@ const setActivePackageManager = (clickedItem: PackageManager) => {
             >
          </div>
 
-         <TooltipProvider>
-            <Tooltip>
-               <TooltipTrigger as-child>
-                  <Button
-                     class="hover:bg-unset hover:text-unset text-white"
-                     size="sm"
-                     variant="ghost"
-                     @click="
-                        copy(
-                           packageManagers.find((item) => item.isActive)
-                              ?.command || '',
-                        )
-                     "
-                  >
-                     <template v-if="copied">
-                        <Check :size="20" class="text-green-500" />
-                     </template>
-                     <template v-else>
-                        <Copy :size="20" />
-                     </template>
-                  </Button>
-               </TooltipTrigger>
-               <TooltipContent>
-                  <span>Copy</span>
-               </TooltipContent>
-            </Tooltip>
-         </TooltipProvider>
+         <CopyButton
+            :text="packageManagers.find((item) => item.isActive)?.command || ''"
+         />
       </div>
       <Separator class="mt-2 bg-zinc-700" />
 

@@ -37,8 +37,5 @@ const dialog = ref(false);
       </div>
    </div>
 
-   <ComponentInstallationDialog
-      v-model:open="dialog"
-      :component-name="component.name"
-   />
+   <ComponentInstallationDialog v-model:open="dialog" :component="component" />
 </template>
