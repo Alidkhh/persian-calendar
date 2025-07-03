@@ -11,30 +11,36 @@ const dialog = ref(false);
 
 <template>
    <div
-      class="bg-background relative flex flex-col items-center justify-center p-12 pb-5 md:p-8"
+      class="bg-background relative flex flex-col items-center justify-center p-8"
    >
-      <TooltipProvider>
-         <Tooltip>
-            <TooltipTrigger as-child class="absolute end-0 top-0 m-3">
-               <Button
-                  class="border-muted-foreground/50 size-7 p-0 hover:bg-zinc-300"
-                  size="icon"
-                  variant="outline"
-                  @click="dialog = true"
-               >
-                  <Code />
-               </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-               <span>Installation</span>
-            </TooltipContent>
-         </Tooltip>
-      </TooltipProvider>
+      <div class="mb-3 flex w-full items-center justify-between">
+         <Button class="invisible size-7 p-0" size="icon" variant="outline">
+         </Button>
+
+         <div class="text-muted-foreground text-xs">
+            <p>{{ component.description }}</p>
+         </div>
+
+         <TooltipProvider>
+            <Tooltip>
+               <TooltipTrigger as-child class="">
+                  <Button
+                     class="border-muted-foreground/50 size-7 p-0 hover:bg-zinc-300"
+                     size="icon"
+                     variant="outline"
+                     @click="dialog = true"
+                  >
+                     <Code />
+                  </Button>
+               </TooltipTrigger>
+               <TooltipContent>
+                  <span>Installation</span>
+               </TooltipContent>
+            </Tooltip>
+         </TooltipProvider>
+      </div>
 
       <slot></slot>
-      <div class="text-muted-foreground mt-4 text-xs">
-         <p>{{ component.description }}</p>
-      </div>
    </div>
 
    <ComponentInstallationDialog v-model:open="dialog" :component="component" />
