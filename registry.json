@@ -4,12 +4,12 @@
    "homepage": "https://persian-calendar.alidkhh.workers.dev",
    "items": [
       {
-         "name": "Comp-3",
+         "name": "Comp-1",
          "type": "registry:component",
          "description": "Calendar",
          "files": [
             {
-               "path": "registry/default/components/Comp-3.vue",
+               "path": "registry/default/components/Comp-1.vue",
                "type": "registry:component"
             }
          ],
