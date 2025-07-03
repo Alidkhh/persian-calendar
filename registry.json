@@ -28,6 +28,18 @@
          "registryDependencies": ["button", "calendar"]
       },
       {
+         "name": "Comp-3",
+         "type": "registry:component",
+         "description": "Disabled dates",
+         "files": [
+            {
+               "path": "registry/default/components/Comp-3.vue",
+               "type": "registry:component"
+            }
+         ],
+         "registryDependencies": ["button", "calendar"]
+      },
+      {
          "name": "Comp-5",
          "type": "registry:component",
          "description": "Monthly / yearly selects",
