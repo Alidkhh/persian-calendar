@@ -11,7 +11,7 @@ const dialog = ref(false);
 
 <template>
    <div
-      class="relative flex flex-col items-center justify-center rounded-lg bg-zinc-100 p-12 pb-5 md:p-8"
+      class="bg-background relative flex flex-col items-center justify-center p-12 pb-5 md:p-8"
    >
       <TooltipProvider>
          <Tooltip>

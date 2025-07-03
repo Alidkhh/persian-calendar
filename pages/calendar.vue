@@ -23,7 +23,7 @@ const components = getComponentsByNames(
 
 <template>
    <div
-      class="xxl:grid-cols-4 bg-background mb-10 grid grid-cols-1 gap-1 md:grid-cols-2 lg:grid-cols-3"
+      class="xxl:grid-cols-4 bg-foreground/20 mb-10 grid grid-cols-1 gap-[1px] md:grid-cols-2 lg:grid-cols-3"
    >
       <template v-for="component in components">
          <ComponentPreview :component="component">
