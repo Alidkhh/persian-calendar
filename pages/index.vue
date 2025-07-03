@@ -20,7 +20,9 @@ const config = useRuntimeConfig();
 
       <div class="mt-16 flex items-center justify-center gap-4">
          <NuxtLink :to="routes.calendar.route">
-            <Button size="xl" class="text-md group font-sans md:text-xl">
+            <Button
+               class="text-md group h-12 rounded-lg px-7 font-sans has-[>svg]:px-5 md:text-xl"
+            >
                Get Started
                <ArrowRight
                   class="size-5 duration-300 group-hover:translate-x-1"
@@ -30,8 +32,7 @@ const config = useRuntimeConfig();
 
          <a :href="config.public.github" target="_blank">
             <Button
-               size="xl"
-               class="text-md group font-sans md:text-xl"
+               class="text-md group h-12 rounded-lg px-7 font-sans has-[>svg]:px-5 border-muted-foreground md:text-xl"
                variant="outline"
             >
                <Star

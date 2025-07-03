@@ -1,7 +1,7 @@
 {
    "$schema": "https://shadcn-vue.com/schema/registry.json",
    "name": "vue-persian-calendar",
-   "homepage": "https://vue-persian-calendar.com",
+   "homepage": "https://persian-calendar.alidkhh.workers.dev",
    "items": [
       {
          "name": "Comp-1",
@@ -13,10 +13,7 @@
                "type": "registry:component"
             }
          ],
-         "registryDependencies": [
-            "button",
-            "https://persian-calendar.alidkhh.workers.dev/r/Comp-2.json"
-         ]
+         "registryDependencies": ["button", "calendar"]
       },
       {
          "name": "Comp-2",

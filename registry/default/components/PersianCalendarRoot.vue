@@ -8,7 +8,6 @@ import {
    useForwardPropsEmits,
 } from "reka-ui";
 import { cn } from "@/lib/utils";
-import { CalendarFooter } from "@/registry/default/ui/calendar";
 
 import {
    type DateValue,
@@ -88,10 +87,5 @@ const placeholder = computed({
          :modelValue="modelValue"
          :placeholder="placeholder"
       ></slot>
-      <CalendarFooter
-         v-if="showFooter"
-         v-model="modelValue"
-         v-model:selected-date="selectedDate"
-      />
    </CalendarRoot>
 </template>

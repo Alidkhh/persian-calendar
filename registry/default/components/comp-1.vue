@@ -20,7 +20,6 @@ import {
    CalendarHeading,
    CalendarNextButton,
    CalendarPrevButton,
-   CalendarFooter,
 } from "@/registry/default/ui/calendar";
 import {
    type DateValue,
@@ -30,6 +29,7 @@ import {
    today,
    CalendarDate,
    PersianCalendar,
+   parseDate,
 } from "@internationalized/date";
 
 const props = withDefaults(
@@ -78,6 +78,29 @@ const placeholder = computed({
       };
    },
 });
+
+const footerDateString = computed(() => {
+   if (modelValue.value) {
+      return toCalendar(
+         parseDate(String(modelValue.value)),
+         createCalendar("persian"),
+      )
+         .toDate(getLocalTimeZone())
+         .toLocaleString("fa-IR", {
+            year: "numeric",
+            month: "numeric",
+            day: "numeric",
+         });
+   }
+});
+
+const setToday = () => {
+   modelValue.value = todayDate;
+   selectedDate.value = {
+      year: todayDate.year,
+      month: todayDate.month,
+   };
+};
 </script>
 
 <template>
@@ -98,8 +121,8 @@ const placeholder = computed({
          <CalendarHeading class="dir-ltr" />
 
          <div class="flex items-center gap-1">
-            <CalendarPrevButton />
-            <CalendarNextButton />
+            <CalendarPrevButton class="calendar-prev-btn" />
+            <CalendarNextButton class="calendar-next-btn" />
          </div>
       </CalendarHeader>
 
@@ -132,10 +155,28 @@ const placeholder = computed({
             </CalendarGridBody>
          </CalendarGrid>
       </div>
-      <CalendarFooter
-         v-if="showFooter"
-         v-model="modelValue"
-         v-model:selected-date="selectedDate"
-      />
+
+      <template v-if="showFooter">
+         <Separator class="my-3" />
+         <div class="flex items-center justify-between">
+            <span class="text-xs">{{ footerDateString }}</span>
+            <Button class="h-6 rounded-md px-2 text-xs" @click="setToday"
+               >اکنون</Button
+            >
+         </div>
+      </template>
    </CalendarRoot>
 </template>
+<style scoped>
+.calendar-prev-btn {
+   left: unset !important;
+   right: 0;
+   rotate: 180deg;
+}
+
+.calendar-next-btn {
+   right: unset !important;
+   left: 0;
+   rotate: 180deg;
+}
+</style>

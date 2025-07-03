@@ -1,9 +1,24 @@
 <script lang="ts" setup>
-import { components } from "#imports";
+import { categories } from "~/utils/components";
 
-// const isDateUnavailable = (date: any) => {
-//    return date.day === 17 || date.day === 18;
-// };
+const route = useRoute();
+const categorySlug = route.name as string;
+
+const getCategory = (slug: string) =>
+   categories.find((category) => category.slug === slug);
+
+const category = getCategory(categorySlug);
+
+if (!category) {
+   throw createError({
+      statusCode: 404,
+      message: ` not found`,
+   });
+}
+
+const components = getComponentsByNames(
+   category.components.map((item) => item.name),
+);
 </script>
 
 <template>
