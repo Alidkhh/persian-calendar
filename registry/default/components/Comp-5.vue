@@ -77,7 +77,7 @@ const modelValue = ref({
                      v-for="weekDate in weekDates"
                      :key="weekDate.toString()"
                      :date="weekDate"
-                     class="[&:has([data-selected])]:bg-muted-foreground/50 first:[&:has([data-selected])]:rounded-s-md first:[&:has([data-selected])]:rounded-l-none last:[&:has([data-selected])]:rounded-e-md last:[&:has([data-selected])]:rounded-r-none [&:has([data-selected][data-selection-end])]:rounded-e-md [&:has([data-selected][data-selection-end])]:rounded-r-none [&:has([data-selected][data-selection-start])]:rounded-s-md [&:has([data-selected][data-selection-start])]:rounded-l-none"
+                     class="[&:has([data-selected])]:bg-muted-foreground/40 first:[&:has([data-selected])]:rounded-s-md first:[&:has([data-selected])]:rounded-l-none last:[&:has([data-selected])]:rounded-e-md last:[&:has([data-selected])]:rounded-r-none [&:has([data-selected][data-selection-end])]:rounded-e-md [&:has([data-selected][data-selection-end])]:rounded-r-none [&:has([data-selected][data-selection-start])]:rounded-s-md [&:has([data-selected][data-selection-start])]:rounded-l-none"
                   >
                      <RangeCalendarCellTrigger
                         :day="weekDate"
