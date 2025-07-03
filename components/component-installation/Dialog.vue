@@ -8,15 +8,12 @@ const props = defineProps<{
 
 <template>
    <Dialog v-model:open="open" :component-name="componentName">
-      <DialogContent class="sm:max-w-2xl">
+      <DialogContent class="rounded-xl p-2 pt-4 pb-3 sm:max-w-2xl lg:p-4">
          <DialogHeader>
             <DialogTitle>Installation</DialogTitle>
          </DialogHeader>
 
-         <ComponentInstallation
-            class="mt-5 mb-2"
-            :component-name="componentName"
-         />
+         <ComponentInstallation class="mt-5" :component-name="componentName" />
       </DialogContent>
    </Dialog>
 </template>
