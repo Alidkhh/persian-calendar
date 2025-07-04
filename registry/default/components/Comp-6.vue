@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { Button } from "@/registry/default/ui/button";
-import { cn } from "@/lib/utils";
 import {
    CalendarCell,
    CalendarCellTrigger,
@@ -14,7 +13,6 @@ import {
    CalendarNextButton,
    CalendarPrevButton,
 } from "@/registry/default/ui/calendar";
-import { useDateFormat } from "@vueuse/core";
 import {
    CalendarRoot,
    type CalendarRootEmits,
@@ -27,10 +25,8 @@ import {
    getLocalTimeZone,
    toCalendar,
    today,
-   CalendarDate,
    PersianCalendar,
    CalendarDateTime,
-   getDayOfWeek,
 } from "@internationalized/date";
 import type { HTMLAttributes } from "vue";
 import { reactiveOmit } from "@vueuse/core";
