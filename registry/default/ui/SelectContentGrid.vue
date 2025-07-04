@@ -56,7 +56,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
                cn(
                   'p-1',
                   position === 'popper' &&
-                     'grid h-[var(--reka-select-trigger-height)] w-full min-w-[var(--reka-select-trigger-width)] scroll-my-1 gap-1',
+                     'grid h-[var(--reka-select-trigger-height)] w-full min-w-[var(--reka-select-trigger-width)] scroll-my-1 gap-2',
                   {
                      'grid-cols-1': gridCols === 1,
                      'grid-cols-2': gridCols === 2,
