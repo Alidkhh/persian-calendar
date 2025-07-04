@@ -73,7 +73,10 @@
                "type": "registry:component"
             }
          ],
-         "registryDependencies": ["button", "calendar"]
+         "registryDependencies": ["button", "calendar"],
+         "meta": {
+            "colSpan": 2
+         }
       }
    ]
 }

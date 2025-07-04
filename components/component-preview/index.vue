@@ -1,8 +1,11 @@
 <script lang="ts" setup>
+import type { HTMLAttributes } from "vue";
+import { cn } from "~/lib/utils";
 import { Code } from "lucide-vue-next";
 import type { RegistryItem } from "shadcn-vue/registry";
 
 const props = defineProps<{
+   class?: HTMLAttributes["class"];
    component: RegistryItem;
 }>();
 
@@ -11,7 +14,12 @@ const dialog = ref(false);
 
 <template>
    <div
-      class="bg-background relative flex flex-col items-center justify-center p-8"
+      :class="
+         cn(
+            'bg-background relative flex flex-col items-center justify-center p-3 pb-5',
+            props.class,
+         )
+      "
    >
       <div class="mb-3 flex w-full items-center justify-between">
          <Button class="invisible size-7 p-0" size="icon" variant="outline">
