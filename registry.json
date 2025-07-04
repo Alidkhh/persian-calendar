@@ -62,6 +62,18 @@
             }
          ],
          "registryDependencies": ["button", "range-calendar"]
+      },
+      {
+         "name": "Comp-6",
+         "type": "registry:component",
+         "description": "Appointment Picker",
+         "files": [
+            {
+               "path": "registry/default/components/Comp-6.vue",
+               "type": "registry:component"
+            }
+         ],
+         "registryDependencies": ["button", "calendar"]
       }
    ]
 }
