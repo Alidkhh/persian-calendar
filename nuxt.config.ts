@@ -1,6 +1,9 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
+   $development: {
+      debug: true,
+   },
    app: {
       pageTransition: { name: "page", mode: "out-in" },
       head: {
