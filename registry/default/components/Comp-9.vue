@@ -88,22 +88,6 @@ function selectRange(preset: Preset) {
    modelValue.value = { start: preset.start, end: preset.end };
 }
 
-function checkSelectedPreset(preset: Preset): boolean {
-   if (
-      preset.start.toDate(getLocalTimeZone()).toLocaleString("fa-IR") ==
-         modelValue.value.start
-            ?.toDate(getLocalTimeZone())
-            .toLocaleString("fa-IR") &&
-      preset.end.toDate(getLocalTimeZone()).toLocaleString("fa-IR") ==
-         modelValue.value.end
-            ?.toDate(getLocalTimeZone())
-            .toLocaleString("fa-IR")
-   ) {
-      return true;
-   }
-   return false;
-}
-
 const dateString = computed(() => {
    const startDate = modelValue.value.start?.toDate(getLocalTimeZone());
    const endDate = modelValue.value.end?.toDate(getLocalTimeZone());
@@ -130,24 +114,26 @@ const dateString = computed(() => {
       >
          <div class="flex gap-4 max-sm:flex-col">
             <div
-               class="relative flex flex-col justify-between max-sm:order-1 max-sm:border-t sm:w-32"
+               class="relative flex flex-col justify-between pe-2 max-sm:order-1 max-sm:border-t sm:w-32 sm:border-e"
             >
-               <div class="flex h-full flex-col pe-2 sm:border-e">
+               <div class="mt-2 mb-1 flex h-full flex-col sm:mt-0">
                   <Button
                      v-for="preset in presets"
                      :key="preset.label"
                      size="sm"
                      class="w-full justify-start"
-                     :variant="
-                        checkSelectedPreset(preset) ? 'default' : 'ghost'
-                     "
+                     variant="ghost"
                      @click="selectRange(preset)"
                   >
                      {{ preset.label }}
                   </Button>
                </div>
-               <div class="flex justify-center">
-                  <span class="text-xs text-muted-foreground">{{ dateString }}</span>
+               <div class="flex flex-col items-center justify-center">
+                  <Separator class="my-2" />
+
+                  <span class="text-muted-foreground text-xs">{{
+                     dateString
+                  }}</span>
                </div>
             </div>
             <RangeCalendarRoot

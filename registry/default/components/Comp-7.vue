@@ -114,7 +114,7 @@ const selectMonth = (year: number, month: number) => {
       v-slot="{ weekDays, grid }"
       :class="
          cn(
-            'bg-background relative rounded-lg border border-neutral-300 p-3',
+            'bg-background relative overflow-hidden rounded-lg border border-neutral-300 p-3',
             props.class,
          )
       "
@@ -161,7 +161,7 @@ const selectMonth = (year: number, month: number) => {
                         </Button>
                      </CollapsibleTrigger>
                      <CollapsibleContent
-                        class="data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down overflow-hidden px-3 py-1 text-sm transition-all"
+                        class="data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down overflow-hidden py-1 text-sm transition-all"
                      >
                         <div class="grid grid-cols-3 gap-2">
                            <Button
