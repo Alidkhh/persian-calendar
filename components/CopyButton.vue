@@ -19,7 +19,6 @@ const { copied, copy } = useClipboard();
                <Button
                   class="hover:bg-unset hover:text-unset text-white"
                   size="sm"
-                  variant="ghost"
                   @click="copy(props.text ?? '')"
                >
                   <template v-if="copied">

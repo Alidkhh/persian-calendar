@@ -25,8 +25,13 @@ const dialog = ref(false);
          <Button class="invisible size-7 p-0" size="icon" variant="outline">
          </Button>
 
-         <div class="text-muted-foreground text-xs">
+         <div class="text-muted-foreground text-sm text-center">
             <p>{{ component.description }}</p>
+            <DevOnly>
+               <span class="text-xs">{{
+                  component.name
+               }}</span>
+            </DevOnly>
          </div>
 
          <TooltipProvider>
