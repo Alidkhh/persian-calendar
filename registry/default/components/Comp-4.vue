@@ -21,7 +21,6 @@ import {
    createCalendar,
    PersianCalendar,
    toCalendar,
-   parseDate,
 } from "@internationalized/date";
 import {
    CalendarRoot,
@@ -29,8 +28,6 @@ import {
    type CalendarRootProps,
    useForwardPropsEmits,
 } from "reka-ui";
-import SelectContentGrid from "../ui/SelectContentGrid.vue";
-import SelectItemButton from "../ui/SelectItemButton.vue";
 
 const props = withDefaults(
    defineProps<
@@ -82,28 +79,8 @@ const monthNames = Array.from({ length: 12 }, (_, i) =>
 
 const years = Array.from({ length: 40 }, (_, i) => todayDate.year - 20 + i);
 
-const footerDateString = computed(() => {
-   if (modelValue.value) {
-      return toCalendar(
-         parseDate(String(modelValue.value)),
-         createCalendar("persian"),
-      )
-         .toDate(getLocalTimeZone())
-         .toLocaleString("fa-IR", {
-            year: "numeric",
-            month: "numeric",
-            day: "numeric",
-         });
-   }
-});
-
-const setToday = () => {
-   modelValue.value = todayDate;
-   selectedDate.value = {
-      year: todayDate.year,
-      month: todayDate.month,
-   };
-};
+const selectItemClasses =
+   "data-[state=checked]:bg-primary justify-center px-2 data-[state=checked]:text-white [&_svg]:hidden";
 </script>
 
 <template>
@@ -127,29 +104,31 @@ const setToday = () => {
                   <SelectTrigger size="sm" class="w-full">
                      <SelectValue />
                   </SelectTrigger>
-                  <SelectContentGrid :grid-cols="3">
-                     <SelectItemButton
+                  <SelectContent>
+                     <SelectItem
                         v-for="(month, i) in monthNames"
                         :key="i"
                         :value="i + 1"
+                        :class="selectItemClasses"
                      >
                         {{ month }}
-                     </SelectItemButton>
-                  </SelectContentGrid>
+                     </SelectItem>
+                  </SelectContent>
                </Select>
                <Select v-model="selectedDate.year">
                   <SelectTrigger size="sm" class="w-full">
                      <SelectValue />
                   </SelectTrigger>
-                  <SelectContentGrid :grid-cols="3">
-                     <SelectItemButton
+                  <SelectContent>
+                     <SelectItem
                         v-for="year in years"
                         :key="year"
                         :value="year"
+                        :class="selectItemClasses"
                      >
                         {{ year }}
-                     </SelectItemButton>
-                  </SelectContentGrid>
+                     </SelectItem>
+                  </SelectContent>
                </Select>
             </div>
          </CalendarHeader>
