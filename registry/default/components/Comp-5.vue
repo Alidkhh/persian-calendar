@@ -15,6 +15,19 @@ import {
    createCalendar,
 } from "@internationalized/date";
 import type { DateRange } from "reka-ui";
+import {
+   RangeCalendarCell,
+   RangeCalendarCellTrigger,
+   RangeCalendarGrid,
+   RangeCalendarGridBody,
+   RangeCalendarGridHead,
+   RangeCalendarGridRow,
+   RangeCalendarHeadCell,
+   RangeCalendarHeader,
+   RangeCalendarHeading,
+   RangeCalendarNextButton,
+   RangeCalendarPrevButton,
+} from "@/registry/default/ui/range-calendar";
 
 const props = withDefaults(
    defineProps<RangeCalendarRootProps & { class?: HTMLAttributes["class"] }>(),

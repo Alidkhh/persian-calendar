@@ -104,6 +104,21 @@
          "meta": {
             "colSpan": 2
          }
+      },
+      {
+         "name": "Comp-9",
+         "type": "registry:component",
+         "description": "Range Calendar with presets",
+         "files": [
+            {
+               "path": "registry/default/components/Comp-9.vue",
+               "type": "registry:component"
+            }
+         ],
+         "registryDependencies": ["button", "range-calendar"],
+         "meta": {
+            "colSpan": 2
+         }
       }
    ]
 }

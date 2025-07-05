@@ -89,7 +89,9 @@ const presets = [
 
 <template>
    <div>
-      <div class="bg-background dir-rtl rounded-lg border border-neutral-300 p-3">
+      <div
+         class="bg-background dir-rtl rounded-lg border border-neutral-300 p-3"
+      >
          <div class="flex gap-4 max-sm:flex-col">
             <div class="relative max-sm:order-1 max-sm:border-t sm:w-32">
                <div class="flex h-full flex-col pe-2 sm:border-e">
@@ -117,8 +119,8 @@ const presets = [
                <CalendarHeader>
                   <CalendarHeading class="dir-ltr" />
                   <div class="flex items-center gap-1">
-                     <CalendarPrevButton class="absolute left-1" />
-                     <CalendarNextButton class="absolute right-1" />
+                     <CalendarPrevButton class="calendar-prev-btn" />
+                     <CalendarNextButton class="calendar-next-btn" />
                   </div>
                </CalendarHeader>
                <div
@@ -161,6 +163,18 @@ const presets = [
    </div>
 </template>
 <style scoped>
+.calendar-prev-btn {
+   left: unset !important;
+   right: 0;
+   rotate: 180deg;
+}
+
+.calendar-next-btn {
+   right: unset !important;
+   left: 0;
+   rotate: 180deg;
+}
+
 .dir-rtl {
    direction: rtl;
 }
