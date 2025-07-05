@@ -122,85 +122,91 @@ const formatDate = computed(() =>
 </script>
 
 <template>
-   <div class="bg-background dir-rtl rounded-lg border border-neutral-300 p-3">
-      <div class="flex gap-4 max-sm:flex-col">
-         <CalendarRoot
-            data-slot="calendar"
-            v-slot="{ grid, weekDays }"
-            :class="props.class"
-            v-bind="forwarded"
-            v-model="modelValue"
-         >
-            <CalendarHeader>
-               <CalendarHeading />
-               <div class="flex items-center gap-1">
-                  <CalendarPrevButton class="calendar-prev-btn" />
-                  <CalendarNextButton class="calendar-next-btn" />
-               </div>
-            </CalendarHeader>
-            <div
-               class="mt-4 flex flex-col gap-y-4 sm:flex-row sm:gap-x-4 sm:gap-y-0"
+   <div>
+      <div
+         class="bg-background dir-rtl rounded-lg border border-neutral-300 p-3"
+      >
+         <div class="flex gap-4 max-sm:flex-col">
+            <CalendarRoot
+               data-slot="calendar"
+               v-slot="{ grid, weekDays }"
+               :class="props.class"
+               v-bind="forwarded"
+               v-model="modelValue"
             >
-               <CalendarGrid
-                  v-for="month in grid"
-                  :key="month.value.toString()"
-               >
-                  <CalendarGridHead>
-                     <CalendarGridRow>
-                        <CalendarHeadCell v-for="day in weekDays" :key="day">
-                           {{ day }}
-                        </CalendarHeadCell>
-                     </CalendarGridRow>
-                  </CalendarGridHead>
-                  <CalendarGridBody>
-                     <CalendarGridRow
-                        v-for="(weekDates, index) in month.rows"
-                        :key="`weekDate-${index}`"
-                        class="mt-2 w-full"
-                     >
-                        <CalendarCell
-                           v-for="weekDate in weekDates"
-                           :key="weekDate.toString()"
-                           :date="weekDate"
-                        >
-                           <CalendarCellTrigger
-                              :day="weekDate"
-                              :month="month.value"
-                           />
-                        </CalendarCell>
-                     </CalendarGridRow>
-                  </CalendarGridBody>
-               </CalendarGrid>
-            </div>
-         </CalendarRoot>
-         <div class="relative w-full max-sm:h-48 sm:w-40">
-            <div class="absolute inset-0 pt-2 max-sm:border-t sm:pt-0">
-               <ScrollArea class="h-full sm:border-s">
-                  <div class="space-y-3">
-                     <div
-                        class="flex h-5 shrink-0 items-center justify-center px-5"
-                     >
-                        <p class="text-sm font-medium">
-                           {{ formatDate }}
-                        </p>
-                     </div>
-                     <div class="grid gap-1.5 px-5 max-sm:grid-cols-2">
-                        <Button
-                           v-for="time in timeSlots"
-                           :key="time.time"
-                           :variant="
-                              isSelectedTime(time.time) ? 'default' : 'outline'
-                           "
-                           size="sm"
-                           class="w-full"
-                           :disabled="!time.available"
-                           @click="handleTimeClick(time.time)"
-                        >
-                           {{ time.time }}
-                        </Button>
-                     </div>
+               <CalendarHeader>
+                  <CalendarHeading class="dir-ltr" />
+                  <div class="flex items-center gap-1">
+                     <CalendarPrevButton class="calendar-prev-btn" />
+                     <CalendarNextButton class="calendar-next-btn" />
                   </div>
-               </ScrollArea>
+               </CalendarHeader>
+               <div
+                  class="mt-4 flex flex-col gap-y-4 sm:flex-row sm:gap-x-4 sm:gap-y-0"
+               >
+                  <CalendarGrid
+                     v-for="month in grid"
+                     :key="month.value.toString()"
+                  >
+                     <CalendarGridHead>
+                        <CalendarGridRow>
+                           <CalendarHeadCell v-for="day in weekDays" :key="day">
+                              {{ day }}
+                           </CalendarHeadCell>
+                        </CalendarGridRow>
+                     </CalendarGridHead>
+                     <CalendarGridBody>
+                        <CalendarGridRow
+                           v-for="(weekDates, index) in month.rows"
+                           :key="`weekDate-${index}`"
+                           class="mt-2 w-full"
+                        >
+                           <CalendarCell
+                              v-for="weekDate in weekDates"
+                              :key="weekDate.toString()"
+                              :date="weekDate"
+                           >
+                              <CalendarCellTrigger
+                                 :day="weekDate"
+                                 :month="month.value"
+                              />
+                           </CalendarCell>
+                        </CalendarGridRow>
+                     </CalendarGridBody>
+                  </CalendarGrid>
+               </div>
+            </CalendarRoot>
+            <div class="relative w-full max-sm:h-48 sm:w-40">
+               <div class="absolute inset-0 pt-2 max-sm:border-t sm:pt-0">
+                  <ScrollArea class="h-full sm:border-s">
+                     <div class="space-y-3">
+                        <div
+                           class="flex h-5 shrink-0 items-center justify-center px-5"
+                        >
+                           <p class="text-sm font-medium">
+                              {{ formatDate }}
+                           </p>
+                        </div>
+                        <div class="grid gap-1.5 px-5 max-sm:grid-cols-2">
+                           <Button
+                              v-for="time in timeSlots"
+                              :key="time.time"
+                              :variant="
+                                 isSelectedTime(time.time)
+                                    ? 'default'
+                                    : 'outline'
+                              "
+                              size="sm"
+                              class="w-full"
+                              :disabled="!time.available"
+                              @click="handleTimeClick(time.time)"
+                           >
+                              {{ time.time }}
+                           </Button>
+                        </div>
+                     </div>
+                  </ScrollArea>
+               </div>
             </div>
          </div>
       </div>
@@ -217,5 +223,12 @@ const formatDate = computed(() =>
    right: unset !important;
    left: 0;
    rotate: 180deg;
+}
+.dir-rtl {
+   direction: rtl;
+}
+
+.dir-ltr {
+   direction: ltr;
 }
 </style>

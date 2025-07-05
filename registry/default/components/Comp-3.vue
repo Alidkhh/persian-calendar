@@ -150,4 +150,11 @@ const isDateUnavailable = (date: DateValue) =>
    left: 0;
    rotate: 180deg;
 }
+.dir-rtl {
+   direction: rtl;
+}
+
+.dir-ltr {
+   direction: ltr;
+}
 </style>

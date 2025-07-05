@@ -102,4 +102,11 @@ const modelValue = ref({
    left: 0;
    rotate: 180deg;
 }
+.dir-rtl {
+   direction: rtl;
+}
+
+.dir-ltr {
+   direction: ltr;
+}
 </style>
