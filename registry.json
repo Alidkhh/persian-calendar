@@ -81,7 +81,7 @@
       {
          "name": "Comp-7",
          "type": "registry:component",
-         "description": "Appointment Picker",
+         "description": "Collapsible selection",
          "files": [
             {
                "path": "registry/default/components/Comp-7.vue",
@@ -89,6 +89,21 @@
             }
          ],
          "registryDependencies": ["button", "calendar", "collapsible"]
+      },
+      {
+         "name": "Comp-8",
+         "type": "registry:component",
+         "description": "Calendar with presets",
+         "files": [
+            {
+               "path": "registry/default/components/Comp-8.vue",
+               "type": "registry:component"
+            }
+         ],
+         "registryDependencies": ["button", "calendar"],
+         "meta": {
+            "colSpan": 2
+         }
       }
    ]
 }
