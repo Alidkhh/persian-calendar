@@ -178,7 +178,7 @@ const formatDate = computed(() =>
             </CalendarRoot>
             <div class="relative w-full max-sm:h-48 sm:w-40">
                <div class="absolute inset-0 pt-2 max-sm:border-t sm:pt-0">
-                  <ScrollArea class="h-full sm:border-s">
+                  <ScrollArea class="h-full sm:border-s" type="always">
                      <div class="space-y-3">
                         <div
                            class="flex h-5 shrink-0 items-center justify-center px-5"

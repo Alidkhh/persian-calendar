@@ -121,7 +121,7 @@ const selectMonth = (year: number, month: number) => {
       v-bind="forwarded"
       v-model="modelValue"
    >
-      <CalendarHeader class="static flex justify-between">
+      <CalendarHeader class="static flex justify-between pt-0">
          <Collapsible v-model:open="collapsibleOpen">
             <CollapsibleTrigger asChild>
                <Button
