@@ -61,28 +61,20 @@ const presets = [
       value: todayDate,
    },
    {
-      label: "دیروز",
-      value: todayDate.subtract({ days: 1 }),
-   },
-   {
       label: "هفته گذشته",
       value: todayDate.subtract({ days: 7 }),
-   },
-   {
-      label: "ماه گذشته",
-      value: todayDate.subtract({ months: 1 }),
    },
    {
       label: "هفته بعد",
       value: todayDate.add({ days: 7 }),
    },
    {
-      label: "ماه بعد",
-      value: todayDate.add({ months: 1 }),
+      label: "ماه گذشته",
+      value: todayDate.subtract({ months: 1 }),
    },
    {
-      label: "پارسال",
-      value: todayDate.subtract({ years: 1 }),
+      label: "ماه بعد",
+      value: todayDate.add({ months: 1 }),
    },
 ];
 </script>

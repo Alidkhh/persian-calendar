@@ -104,7 +104,7 @@ const selectItemClasses =
                   <SelectTrigger size="sm" class="w-full">
                      <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent align="center">
                      <SelectItem
                         v-for="(month, i) in monthNames"
                         :key="i"
@@ -119,7 +119,7 @@ const selectItemClasses =
                   <SelectTrigger size="sm" class="w-full">
                      <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent align="center">
                      <SelectItem
                         v-for="year in years"
                         :key="year"

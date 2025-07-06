@@ -114,9 +114,9 @@ const dateString = computed(() => {
       >
          <div class="flex gap-4 max-sm:flex-col">
             <div
-               class="relative flex flex-col justify-between pe-2 max-sm:order-1 max-sm:border-t sm:w-32 sm:border-e"
+               class="relative flex flex-col justify-between max-sm:order-1 max-sm:border-t sm:w-32 sm:border-e sm:pe-2"
             >
-               <div class="mt-2 mb-1 flex h-full flex-col sm:mt-0">
+               <div class="mt-1 flex h-full flex-col sm:mt-0">
                   <Button
                      v-for="preset in presets"
                      :key="preset.label"
@@ -129,7 +129,7 @@ const dateString = computed(() => {
                   </Button>
                </div>
                <div class="flex flex-col items-center justify-center">
-                  <Separator class="my-2" />
+                  <Separator class="mt-1 mb-2" />
 
                   <span class="text-muted-foreground text-xs">{{
                      dateString
