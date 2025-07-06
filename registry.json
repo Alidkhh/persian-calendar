@@ -119,6 +119,21 @@
          "meta": {
             "colSpan": 2
          }
+      },
+      {
+         "name": "Comp-10",
+         "type": "registry:component",
+         "description": "Two months range calendar",
+         "files": [
+            {
+               "path": "registry/default/components/Comp-10.vue",
+               "type": "registry:component"
+            }
+         ],
+         "registryDependencies": ["button", "range-calendar"],
+         "meta": {
+            "colSpan": 2
+         }
       }
    ]
 }
