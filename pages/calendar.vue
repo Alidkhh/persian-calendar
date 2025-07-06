@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { categories } from "~/utils/components";
+import { Loader } from "lucide-vue-next";
 
 const route = useRoute();
 const categorySlug = route.name as string;
@@ -35,7 +36,16 @@ const components = getComponentsByNames(
             "
          >
             <div>
-               <ComponentLoader :component="component"></ComponentLoader>
+               <Suspense>
+                  <template #default>
+                     <ComponentLoader :component="component"></ComponentLoader>
+                  </template>
+                  <template #fallback>
+                     <div class="flex items-center justify-center p-34">
+                        <Loader class="mx-auto size-5 animate-spin" />
+                     </div>
+                  </template>
+               </Suspense>
             </div>
          </ComponentPreview>
       </template>
