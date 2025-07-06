@@ -7,6 +7,7 @@ import {
    type RangeCalendarRootEmits,
    type RangeCalendarRootProps,
    useForwardPropsEmits,
+   ConfigProvider,
 } from "reka-ui";
 import { cn } from "@/lib/utils";
 import {
@@ -108,7 +109,7 @@ const dateString = computed(() => {
 </script>
 
 <template>
-   <div>
+   <ConfigProvider dir="rtl">
       <div
          class="bg-background dir-rtl rounded-lg border border-neutral-300 p-3"
       >
@@ -191,7 +192,7 @@ const dateString = computed(() => {
             </RangeCalendarRoot>
          </div>
       </div>
-   </div>
+   </ConfigProvider>
 </template>
 <style scoped>
 .calendar-prev-btn {

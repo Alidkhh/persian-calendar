@@ -6,6 +6,7 @@ import {
    type CalendarRootEmits,
    type CalendarRootProps,
    useForwardPropsEmits,
+   ConfigProvider,
 } from "reka-ui";
 import { cn } from "@/lib/utils";
 import {
@@ -84,59 +85,63 @@ const isDateUnavailable = (date: DateValue) =>
 </script>
 
 <template>
-   <CalendarRoot
-      data-slot="calendar"
-      v-slot="{ weekDays, grid }"
-      :class="
-         cn(
-            'bg-background rounded-lg border border-neutral-300 p-3',
-            props.class,
-         )
-      "
-      v-bind="forwarded"
-      v-model="modelValue"
-      :placeholder="placeholder"
-      :isDateUnavailable="isDateUnavailable"
-   >
-      <CalendarHeader>
-         <CalendarHeading class="dir-ltr" />
+   <ConfigProvider dir="rtl">
+      <CalendarRoot
+         data-slot="calendar"
+         v-slot="{ weekDays, grid }"
+         :class="
+            cn(
+               'bg-background rounded-lg border border-neutral-300 p-3',
+               props.class,
+            )
+         "
+         v-bind="forwarded"
+         v-model="modelValue"
+         :placeholder="placeholder"
+         :isDateUnavailable="isDateUnavailable"
+      >
+         <CalendarHeader>
+            <CalendarHeading class="dir-ltr" />
 
-         <div class="flex items-center gap-1">
-            <CalendarPrevButton class="calendar-prev-btn" />
-            <CalendarNextButton class="calendar-next-btn" />
-         </div>
-      </CalendarHeader>
+            <div class="flex items-center gap-1">
+               <CalendarPrevButton class="calendar-prev-btn" />
+               <CalendarNextButton class="calendar-next-btn" />
+            </div>
+         </CalendarHeader>
 
-      <div class="mt-4 flex flex-col gap-y-4 sm:flex-row sm:gap-x-4 sm:gap-y-0">
-         <CalendarGrid v-for="month in grid" :key="month.value.toString()">
-            <CalendarGridHead>
-               <CalendarGridRow>
-                  <CalendarHeadCell v-for="day in weekDays" :key="day">
-                     {{ day }}
-                  </CalendarHeadCell>
-               </CalendarGridRow>
-            </CalendarGridHead>
-            <CalendarGridBody>
-               <CalendarGridRow
-                  v-for="(weekDates, index) in month.rows"
-                  :key="`weekDate-${index}`"
-                  class="mt-2 w-full"
-               >
-                  <CalendarCell
-                     v-for="weekDate in weekDates"
-                     :key="weekDate.toString()"
-                     :date="weekDate"
+         <div
+            class="mt-4 flex flex-col gap-y-4 sm:flex-row sm:gap-x-4 sm:gap-y-0"
+         >
+            <CalendarGrid v-for="month in grid" :key="month.value.toString()">
+               <CalendarGridHead>
+                  <CalendarGridRow>
+                     <CalendarHeadCell v-for="day in weekDays" :key="day">
+                        {{ day }}
+                     </CalendarHeadCell>
+                  </CalendarGridRow>
+               </CalendarGridHead>
+               <CalendarGridBody>
+                  <CalendarGridRow
+                     v-for="(weekDates, index) in month.rows"
+                     :key="`weekDate-${index}`"
+                     class="mt-2 w-full"
                   >
-                     <CalendarCellTrigger
-                        :day="weekDate"
-                        :month="month.value"
-                     />
-                  </CalendarCell>
-               </CalendarGridRow>
-            </CalendarGridBody>
-         </CalendarGrid>
-      </div>
-   </CalendarRoot>
+                     <CalendarCell
+                        v-for="weekDate in weekDates"
+                        :key="weekDate.toString()"
+                        :date="weekDate"
+                     >
+                        <CalendarCellTrigger
+                           :day="weekDate"
+                           :month="month.value"
+                        />
+                     </CalendarCell>
+                  </CalendarGridRow>
+               </CalendarGridBody>
+            </CalendarGrid>
+         </div>
+      </CalendarRoot>
+   </ConfigProvider>
 </template>
 <style scoped>
 .calendar-prev-btn {
