@@ -34,7 +34,7 @@ onMounted(async () => {
 <template>
    <div class="relative">
       <div
-         class="[&_code]:font-mono [&_code]:text-[13px] [&_pre]:max-h-[450px] [&_pre]:overflow-auto [&_pre]:rounded-xl [&_pre]:bg-zinc-900! [&_pre]:p-4 [&_pre]:leading-snug  dark:[&_pre]:bg-zinc-900!"
+         class="[&_code]:font-mono [&_code]:text-[13px] [&_pre]:max-h-[450px] [&_pre]:overflow-auto [&_pre]:rounded-xl [&_pre]:bg-zinc-900! [&_pre]:p-4 [&_pre]:leading-snug dark:[&_pre]:bg-zinc-900!"
          v-html="html"
       ></div>
       <CopyButton :text="code" class="absolute top-2 right-3" />
