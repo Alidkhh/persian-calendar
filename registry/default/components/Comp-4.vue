@@ -27,6 +27,7 @@ import {
    type CalendarRootEmits,
    type CalendarRootProps,
    useForwardPropsEmits,
+   ConfigProvider,
 } from "reka-ui";
 
 const props = withDefaults(
@@ -84,7 +85,7 @@ const selectItemClasses =
 </script>
 
 <template>
-   <div>
+   <ConfigProvider dir="rtl">
       <CalendarRoot
          data-slot="calendar"
          v-slot="{ weekDays, grid, weekStartsOn }"
@@ -164,5 +165,5 @@ const selectItemClasses =
             </CalendarGrid>
          </div>
       </CalendarRoot>
-   </div>
+   </ConfigProvider>
 </template>

@@ -1,7 +1,7 @@
 {
    "$schema": "https://shadcn-vue.com/schema/registry.json",
    "name": "vue-persian-calendar",
-   "homepage": "https://persian-calendar.alidkhh.workers.dev",
+   "homepage": "https://p-calendar.vercel.app",
    "items": [
       {
          "name": "Comp-1",

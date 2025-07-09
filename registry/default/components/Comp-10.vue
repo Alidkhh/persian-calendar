@@ -6,6 +6,7 @@ import {
    type RangeCalendarRootEmits,
    type RangeCalendarRootProps,
    useForwardPropsEmits,
+   ConfigProvider,
 } from "reka-ui";
 import { cn } from "@/lib/utils";
 import {
@@ -50,60 +51,67 @@ const modelValue = ref({
 </script>
 
 <template>
-   <RangeCalendarRoot
-      data-slot="range-calendar"
-      v-slot="{ grid, weekDays }"
-      :class="
-         cn(
-            'bg-background rounded-lg border border-neutral-300 p-3',
-            props.class,
-         )
-      "
-      v-bind="forwarded"
-      v-model="modelValue"
-      :numberOfMonths="2"
-      :isDateUnavailable="isDateUnavailable"
-   >
-      <RangeCalendarHeader>
-         <RangeCalendarHeading class="dir-ltr" />
+   <ConfigProvider dir="rtl">
+      <RangeCalendarRoot
+         data-slot="range-calendar"
+         v-slot="{ grid, weekDays }"
+         :class="
+            cn(
+               'bg-background rounded-lg border border-neutral-300 p-3',
+               props.class,
+            )
+         "
+         v-bind="forwarded"
+         v-model="modelValue"
+         :numberOfMonths="2"
+         :isDateUnavailable="isDateUnavailable"
+      >
+         <RangeCalendarHeader>
+            <RangeCalendarHeading class="dir-ltr" />
 
-         <div class="flex items-center gap-1">
-            <RangeCalendarPrevButton class="calendar-prev-btn" />
-            <RangeCalendarNextButton class="calendar-next-btn" />
-         </div>
-      </RangeCalendarHeader>
+            <div class="flex items-center gap-1">
+               <RangeCalendarPrevButton class="calendar-prev-btn" />
+               <RangeCalendarNextButton class="calendar-next-btn" />
+            </div>
+         </RangeCalendarHeader>
 
-      <div class="mt-4 flex flex-col gap-y-4 sm:flex-row sm:gap-x-4 sm:gap-y-0">
-         <RangeCalendarGrid v-for="month in grid" :key="month.value.toString()">
-            <RangeCalendarGridHead>
-               <RangeCalendarGridRow>
-                  <RangeCalendarHeadCell v-for="day in weekDays" :key="day">
-                     {{ day }}
-                  </RangeCalendarHeadCell>
-               </RangeCalendarGridRow>
-            </RangeCalendarGridHead>
-            <RangeCalendarGridBody>
-               <RangeCalendarGridRow
-                  v-for="(weekDates, index) in month.rows"
-                  :key="`weekDate-${index}`"
-                  class="mt-2 w-full"
-               >
-                  <RangeCalendarCell
-                     v-for="weekDate in weekDates"
-                     :key="weekDate.toString()"
-                     :date="weekDate"
-                     class="[&:has([data-selected])]:bg-muted-foreground/40 first:[&:has([data-selected])]:rounded-s-md first:[&:has([data-selected])]:rounded-l-none last:[&:has([data-selected])]:rounded-e-md last:[&:has([data-selected])]:rounded-r-none [&:has([data-selected][data-selection-end])]:rounded-e-md [&:has([data-selected][data-selection-end])]:rounded-r-none [&:has([data-selected][data-selection-start])]:rounded-s-md [&:has([data-selected][data-selection-start])]:rounded-l-none"
+         <div
+            class="mt-4 flex flex-col gap-y-4 sm:flex-row sm:gap-x-4 sm:gap-y-0"
+         >
+            <RangeCalendarGrid
+               v-for="month in grid"
+               :key="month.value.toString()"
+            >
+               <RangeCalendarGridHead>
+                  <RangeCalendarGridRow>
+                     <RangeCalendarHeadCell v-for="day in weekDays" :key="day">
+                        {{ day }}
+                     </RangeCalendarHeadCell>
+                  </RangeCalendarGridRow>
+               </RangeCalendarGridHead>
+               <RangeCalendarGridBody>
+                  <RangeCalendarGridRow
+                     v-for="(weekDates, index) in month.rows"
+                     :key="`weekDate-${index}`"
+                     class="mt-2 w-full"
                   >
-                     <RangeCalendarCellTrigger
-                        :day="weekDate"
-                        :month="month.value"
-                     />
-                  </RangeCalendarCell>
-               </RangeCalendarGridRow>
-            </RangeCalendarGridBody>
-         </RangeCalendarGrid>
-      </div>
-   </RangeCalendarRoot>
+                     <RangeCalendarCell
+                        v-for="weekDate in weekDates"
+                        :key="weekDate.toString()"
+                        :date="weekDate"
+                        class="[&:has([data-selected])]:bg-muted-foreground/40 first:[&:has([data-selected])]:rounded-s-md first:[&:has([data-selected])]:rounded-l-none last:[&:has([data-selected])]:rounded-e-md last:[&:has([data-selected])]:rounded-r-none [&:has([data-selected][data-selection-end])]:rounded-e-md [&:has([data-selected][data-selection-end])]:rounded-r-none [&:has([data-selected][data-selection-start])]:rounded-s-md [&:has([data-selected][data-selection-start])]:rounded-l-none"
+                     >
+                        <RangeCalendarCellTrigger
+                           :day="weekDate"
+                           :month="month.value"
+                        />
+                     </RangeCalendarCell>
+                  </RangeCalendarGridRow>
+               </RangeCalendarGridBody>
+            </RangeCalendarGrid>
+         </div>
+      </RangeCalendarRoot>
+   </ConfigProvider>
 </template>
 <style scoped>
 .calendar-prev-btn {

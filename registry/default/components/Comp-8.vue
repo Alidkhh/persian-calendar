@@ -27,6 +27,7 @@ import {
    type CalendarRootEmits,
    type CalendarRootProps,
    useForwardPropsEmits,
+   ConfigProvider,
 } from "reka-ui";
 
 const props = withDefaults(
@@ -80,7 +81,7 @@ const presets = [
 </script>
 
 <template>
-   <div>
+   <ConfigProvider dir="rtl">
       <div
          class="bg-background dir-rtl rounded-lg border border-neutral-300 p-3"
       >
@@ -152,7 +153,7 @@ const presets = [
             </CalendarRoot>
          </div>
       </div>
-   </div>
+   </ConfigProvider>
 </template>
 <style scoped>
 .calendar-prev-btn {

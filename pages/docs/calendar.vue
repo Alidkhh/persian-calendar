@@ -2,13 +2,10 @@
 import { categories } from "~/utils/components";
 import { Loader } from "lucide-vue-next";
 
-const route = useRoute();
-const categorySlug = route.name as string;
-
 const getCategory = (slug: string) =>
    categories.find((category) => category.slug === slug);
 
-const category = getCategory(categorySlug);
+const category = getCategory("calendar");
 
 if (!category) {
    throw createError({

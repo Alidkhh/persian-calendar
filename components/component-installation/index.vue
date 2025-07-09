@@ -71,7 +71,7 @@ const setActivePackageManager = (clickedItem: PackageManager) => {
                :key="item.name"
                :class="[
                   !item.isActive ? 'hidden' : '',
-                  'install-command dir-ltr px-2 pt-4 pb-2 font-mono text-sm  text-nowrap text-white',
+                  'install-command dir-ltr px-2 pt-4 pb-2 font-mono text-sm text-nowrap text-white',
                ]"
             >
                {{ item.command }}
