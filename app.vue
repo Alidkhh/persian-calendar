@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-   <div>
+   <div vaul-drawer-wrapper id="app">
       <NuxtLayout>
          <NuxtPage />
       </NuxtLayout>

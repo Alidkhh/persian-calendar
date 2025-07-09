@@ -8,8 +8,16 @@ type Routes = {
 };
 
 export const routes: Routes = {
+   introduction: {
+      title: "Introduction",
+      route: "/docs/Introduction",
+   },
+   installation: {
+      title: "Installation",
+      route: "/docs/Installation",
+   },
    calendar: {
       title: "calendar",
-      route: "/calendar",
+      route: "/docs/calendar",
    },
 };

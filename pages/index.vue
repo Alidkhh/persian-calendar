@@ -1,11 +1,16 @@
 <script lang="ts" setup>
 import { Star, ArrowRight } from "lucide-vue-next";
+
+definePageMeta({
+   layout: "home",
+});
+
 const config = useRuntimeConfig();
 </script>
 
 <template>
    <div class="mt-10 flex flex-col">
-      <div class="max-w-3xl max-sm:text-center">
+      <div class="max-w-3xl max-sm:text-center sm:ms-10">
          <h1
             class="font-heading text-foreground mb-4 text-4xl/[1.1] font-bold tracking-tight md:text-5xl/[1.1]"
          >
@@ -19,7 +24,7 @@ const config = useRuntimeConfig();
       </div>
 
       <div class="mt-16 flex items-center justify-center gap-4">
-         <NuxtLink :to="routes.calendar.route">
+         <NuxtLink :to="routes.introduction.route">
             <Button
                class="text-md group h-12 rounded-lg px-7 font-sans has-[>svg]:px-5 md:text-xl"
             >
