@@ -7,11 +7,11 @@ const config = useRuntimeConfig();
 
 <template>
    <div
-      class="bg-background sticky top-0 z-40 flex justify-center border-b-1 px-2 py-3 shadow-md"
+      class="bg-background sticky top-0 z-40 flex justify-center border-b-1 px-2 py-2 shadow-md"
    >
       <div class="xxl:basis-7xl basis-full md:basis-11/12">
          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-1">
                <div class="block md:hidden">
                   <Drawer>
                      <DrawerTrigger>
@@ -32,7 +32,7 @@ const config = useRuntimeConfig();
             <a :href="config.public.github" target="_blank">
                <Button variant="ghost" size="icon">
                   <GithubIcon
-                     class="text-foreground/60 hover:text-foreground/80 size-4 md:size-5"
+                     class="text-foreground/60 hover:text-foreground/80 size-5"
                   />
                </Button>
             </a>

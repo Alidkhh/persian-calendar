@@ -12,7 +12,11 @@ const props = withDefaults(
    },
 );
 
-const menuItems = [routes.introduction, routes.installation, routes.calendar];
+const menuItems = [
+   routes.introduction,
+   routes.installation,
+   { ...routes.calendar, title: "calendar components" },
+];
 </script>
 
 <template>
