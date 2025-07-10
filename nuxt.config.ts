@@ -39,4 +39,12 @@ export default defineNuxtConfig({
          baseUrl: "",
       },
    },
+
+   routeRules: {
+      "/": { prerender: true },
+      "/docs/Introduction": { prerender: true },
+      "/docs/Installation": { prerender: true },
+      "/docs/calendar": { prerender: true },
+      "/docs/persianCalendar": { prerender: true },
+   },
 });
