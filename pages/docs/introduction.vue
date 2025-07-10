@@ -1,11 +1,9 @@
-<script lang="ts" setup>
-
-</script>
+<script lang="ts" setup></script>
 
 <template>
-    <div>
+   <div>
       <Header>Introduction</Header>
 
-        <p></p>
-    </div>
+      <p></p>
+   </div>
 </template>

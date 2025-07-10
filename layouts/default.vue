@@ -27,7 +27,7 @@ const menuItems = [
       <LayoutBody>
          <div class="relative flex flex-1 gap-5">
             <div
-               class="border-foreground/20 sticky top-[6.5rem] hidden h-full max-h-[calc(100vh-7.5rem)] w-[15rem] flex-shrink-0 overflow-y-auto border-e font-sans text-sm md:block pe-2"
+               class="border-foreground/20 sticky top-[6.5rem] hidden h-full max-h-[calc(100vh-7.5rem)] w-[15rem] flex-shrink-0 overflow-y-auto border-e pe-2 font-sans text-sm md:block"
             >
                <div class="flex flex-col gap-1">
                   <NuxtLink
