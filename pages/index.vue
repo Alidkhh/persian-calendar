@@ -9,7 +9,7 @@ const config = useRuntimeConfig();
 </script>
 
 <template>
-   <div class="mt-10 flex flex-col">
+   <div class="mt-16 flex flex-col">
       <div class="max-w-3xl max-sm:text-center sm:ms-10">
          <h1
             class="font-heading text-foreground mb-4 text-4xl/[1.1] font-bold tracking-tight md:text-5xl/[1.1]"
