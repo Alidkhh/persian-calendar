@@ -16,6 +16,7 @@ const menuItems = [
    routes.introduction,
    routes.installation,
    { ...routes.calendar, title: "calendar components" },
+   { ...routes.persianCalendar, title: "<PersinaCalendar />" },
 ];
 </script>
 

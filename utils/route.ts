@@ -20,4 +20,8 @@ export const routes: Routes = {
       title: "calendar",
       route: "/docs/calendar",
    },
+   persianCalendar: {
+      title: "Persian Calendar",
+      route: "/docs/persianCalendar",
+   },
 };
