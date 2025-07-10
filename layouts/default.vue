@@ -7,7 +7,7 @@
       <LayoutBody>
          <div class="relative flex flex-1 gap-5">
             <div
-               class="border-foreground/20 sticky top-[6.5rem] hidden h-full max-h-[calc(100vh-7.5rem)] w-[15rem] flex-shrink-0 overflow-y-auto border-e pe-2 font-sans text-sm md:block"
+               class="border-foreground/20 sticky top-[6.5rem] hidden h-full max-h-[calc(100vh-7.5rem)] w-[15rem] flex-shrink-0 overflow-y-auto border-e pe-2 text-sm md:block"
             >
                <RoutesMenu />
             </div>

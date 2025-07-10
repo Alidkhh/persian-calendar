@@ -35,7 +35,11 @@ const components = getComponentsByNames(
             <div>
                <Suspense>
                   <template #default>
-                     <ComponentLoader :component="component"></ComponentLoader>
+                     <div class="font-fa">
+                        <ComponentLoader
+                           :component="component"
+                        ></ComponentLoader>
+                     </div>
                   </template>
                   <template #fallback>
                      <div class="flex items-center justify-center p-34">

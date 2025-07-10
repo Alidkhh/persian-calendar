@@ -137,6 +137,7 @@
 @theme inline {
    --font-sans: "Inter", sans-serif;
    --font-heading: "Outfit", sans-serif;
+   --font-fa: "Estedad";
    --font-mono:
       ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
@@ -163,7 +164,7 @@
 }
 
 body {
-   font-family: Estedad !important;
+   font-family: Inter !important;
 }
 
 .dir-rtl {

@@ -14,7 +14,7 @@ const libraries = [
    <div class="w-full md:w-9/12">
       <Header>Introduction</Header>
 
-      <div class="mt-5 text-justify font-sans [&>p]:my-3">
+      <div class="mt-5 text-justify [&>p]:my-3">
          <p>
             A collection of Calendar & Datepicker components for building
             high-quality, accessible design systems and web apps using Vue.js.
