@@ -16,7 +16,7 @@ if (!component) {
    <div class="w-full md:w-8/12">
       <Header>Installation</Header>
 
-      <div class="mt-5 mb-20 text-justify [&>p]:my-3">
+      <div class="mt-5 mb-10 [&>p]:my-6">
          <p>
             To install the components, you need to follow the
             <a

@@ -14,7 +14,7 @@ const libraries = [
    <div class="w-full md:w-9/12">
       <Header>Introduction</Header>
 
-      <div class="mt-5 text-justify [&>p]:my-3">
+      <div class="mt-5 mb-10 [&>p]:my-6">
          <p>
             A collection of Calendar & Datepicker components for building
             high-quality, accessible design systems and web apps using Vue.js.
@@ -26,13 +26,11 @@ const libraries = [
          </p>
          <p class="font-bold">What do you mean not a component library?</p>
          <p>
-            It means you do not install it as a dependency. <br />
-            It is not available or distributed via npm, with no plans to publish
-            it. <br />
-            Pick the components you need. Use the CLI to automatically add the
+            It means you do not install it as a dependency. It is not available
+            or distributed via npm, with no plans to publish it. Pick the
+            components you need. Use the CLI to automatically add the
             components, or copy and paste the code into your project and
-            customize to your needs. <br />
-            The code is yours.
+            customize to your needs. The code is yours.
          </p>
 
          <p>
