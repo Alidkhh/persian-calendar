@@ -16,6 +16,8 @@ import {
    toCalendar,
    createCalendar,
    type CalendarDate,
+   startOfMonth,
+   endOfMonth,
 } from "@internationalized/date";
 import type { DateRange } from "reka-ui";
 import {
@@ -83,6 +85,16 @@ const presets: Preset[] = [
       start: todayDate.subtract({ months: 1 }),
       end: todayDate,
    },
+   {
+      label: "از ابتدای ماه",
+      start: startOfMonth(todayDate),
+      end: todayDate,
+   },
+   {
+      label: "تا انتهای ماه",
+      start: todayDate,
+      end: endOfMonth(todayDate),
+   },
 ];
 
 function selectRange(preset: Preset) {
@@ -101,8 +113,6 @@ const dateString = computed(() => {
    const endDate_month = endDate?.toLocaleString("fa-IR", {
       month: "short",
    });
-
-   console.log(startDate_day);
 
    return `${startDate_day} ${startDate_month} - ${endDate_day} ${endDate_month}`;
 });
