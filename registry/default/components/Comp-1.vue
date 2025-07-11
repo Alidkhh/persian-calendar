@@ -107,11 +107,7 @@ const placeholder = computed({
          <div
             class="mt-4 flex flex-col gap-y-4 overflow-hidden sm:flex-row sm:gap-x-4 sm:gap-y-0"
          >
-            <CalendarGrid
-               v-for="month in grid"
-               :key="month.value.toString()"
-               class=""
-            >
+            <CalendarGrid v-for="month in grid" :key="month.value.toString()">
                <CalendarGridHead>
                   <CalendarGridRow>
                      <CalendarHeadCell v-for="day in weekDays" :key="day">

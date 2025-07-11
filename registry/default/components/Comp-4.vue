@@ -63,7 +63,12 @@ const selectedDate = ref({
 
 const placeholder = computed({
    get: () =>
-      new CalendarDate(selectedDate.value.year, selectedDate.value.month, 1),
+      new CalendarDate(
+         new PersianCalendar(),
+         selectedDate.value.year,
+         selectedDate.value.month,
+         1,
+      ),
    set: (newDate: DateValue) => {
       selectedDate.value = {
          year: newDate.year,
