@@ -99,11 +99,26 @@ const modelValue = ref({
                         v-for="weekDate in weekDates"
                         :key="weekDate.toString()"
                         :date="weekDate"
-                        class="[&:has([data-selected])]:bg-muted-foreground/40 first:[&:has([data-selected])]:rounded-s-md first:[&:has([data-selected])]:rounded-l-none last:[&:has([data-selected])]:rounded-e-md last:[&:has([data-selected])]:rounded-r-none [&:has([data-selected][data-selection-end])]:rounded-e-md [&:has([data-selected][data-selection-end])]:rounded-r-none [&:has([data-selected][data-selection-start])]:rounded-s-md [&:has([data-selected][data-selection-start])]:rounded-l-none"
+                        :class="[
+                           '[&:has([data-highlighted])]:bg-muted-foreground/30 [&:has([data-selected])]:bg-muted-foreground/30 first:[&:has([data-selected])]:rounded-l-none last:[&:has([data-selected])]:rounded-r-none',
+                           // Start
+                           '[&:has([data-highlighted][data-highlighted-start])]:rounded-s-md [&:has([data-selected][data-selection-start])]:rounded-s-md',
+                           // End
+                           '[&:has([data-highlighted][data-highlighted-end])]:rounded-e-md [&:has([data-selected][data-selection-end])]:rounded-e-md',
+                        ]"
                      >
                         <RangeCalendarCellTrigger
                            :day="weekDate"
                            :month="month.value"
+                           :class="[
+                              'hover:bg-unset',
+                              // Selection Start
+                              'data-[highlighted-start]:bg-primary data-[highlighted-start]:text-primary-foreground data-[highlighted-start]:not-data-[highlighted-end]:rounded-e-none data-[selection-start]:not-data-[highlighted]:not-data-[selection-end]:rounded-e-none',
+                              // Selection End
+                              'data-[highlighted-end]:bg-primary data-[highlighted-end]:text-primary-foreground data-[highlighted-end]:not-data-[highlighted-start]:rounded-s-none data-[selection-end]:not-data-[selection-start]:rounded-s-none',
+                              // Today
+                              `[&[data-today]:not([data-selected])]:bg-unset [&[data-today]:not([data-selected])]:text-unset data-[today]:after:content-[' '] data-[today]:after:bg-primary data-[today]:data-[selection-start]:after:bg-primary-foreground data-[today]:data-[selection-end]:after:bg-primary-foreground data-[today]:data-[highlighted]:hover:after:bg-primary-foreground data-[today]:after:absolute data-[today]:after:bottom-[5px] data-[today]:after:h-[3px] data-[today]:after:w-[3px] data-[today]:after:rounded-full`,
+                           ]"
                         />
                      </RangeCalendarCell>
                   </RangeCalendarGridRow>
