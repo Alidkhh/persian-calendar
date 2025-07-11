@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 const libraries = [
    { title: "Reka-ui", link: "https://reka-ui.com/" },
+   { title: "shadcn/vue", link: "https://www.shadcn-vue.com/" },
    {
       title: "Internationalized/date",
       link: "https://react-spectrum.adobe.com/internationalized/date/index.html",
    },
-   { title: "shadcn/vue", link: "https://www.shadcn-vue.com/" },
-   { title: "shadcn-ui", link: "https://ui.shadcn.com/" },
+   { title: "shadcn/ui", link: "https://ui.shadcn.com/" },
 ];
 </script>
 
