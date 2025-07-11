@@ -111,9 +111,9 @@ const modelValue = ref({
                            :class="[
                               'hover:bg-unset',
                               // Selection Start
-                              'data-[highlighted]:data-[highlighted-start]:bg-primary data-[highlighted]:data-[highlighted-start]:text-primary-foreground data-[highlighted-start]:not-data-[highlighted-end]:rounded-e-none data-[selection-start]:not-data-[highlighted]:not-data-[selection-end]:rounded-e-none',
+                              'data-[highlighted-start]:bg-primary data-[highlighted-start]:text-primary-foreground data-[highlighted-start]:not-data-[highlighted-end]:rounded-e-none data-[selection-start]:not-data-[highlighted]:not-data-[selection-end]:rounded-e-none',
                               // Selection End
-                              'data-[highlighted]:data-[highlighted-end]:bg-primary data-[highlighted]:data-[highlighted-end]:text-primary-foreground data-[highlighted-end]:not-data-[highlighted-start]:rounded-s-none data-[selection-end]:not-data-[selection-start]:rounded-s-none',
+                              'data-[highlighted-end]:bg-primary data-[highlighted-end]:text-primary-foreground data-[highlighted-end]:not-data-[highlighted-start]:rounded-s-none data-[selection-end]:not-data-[selection-start]:rounded-s-none',
                               // Today
                               `[&[data-today]:not([data-selected])]:bg-unset [&[data-today]:not([data-selected])]:text-unset data-[today]:after:content-[' '] data-[today]:after:bg-primary data-[today]:data-[selection-start]:after:bg-primary-foreground data-[today]:data-[selection-end]:after:bg-primary-foreground data-[today]:data-[highlighted]:hover:after:bg-primary-foreground data-[today]:after:absolute data-[today]:after:bottom-[5px] data-[today]:after:h-[3px] data-[today]:after:w-[3px] data-[today]:after:rounded-full`,
                            ]"
