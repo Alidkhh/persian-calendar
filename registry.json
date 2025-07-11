@@ -146,6 +146,21 @@
             }
          ],
          "registryDependencies": ["button", "calendar"]
+      },
+      {
+         "name": "Comp-12",
+         "type": "registry:component",
+         "description": "Two months range calendar Separate header",
+         "files": [
+            {
+               "path": "registry/default/components/Comp-12.vue",
+               "type": "registry:component"
+            }
+         ],
+         "registryDependencies": ["button", "range-calendar"],
+         "meta": {
+            "colSpan": 2
+         }
       }
    ]
 }
