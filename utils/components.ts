@@ -11,10 +11,11 @@ export const categories: ComponentCategory[] = [
       name: "Calendar & Date picker",
       components: [
          { name: "Comp-1" },
+         { name: "Comp-5" },
          { name: "Comp-2" },
          { name: "Comp-3" },
+         { name: "Comp-11" },
          { name: "Comp-4" },
-         { name: "Comp-5" },
          { name: "Comp-7" },
          { name: "Comp-6" },
          { name: "Comp-8" },
