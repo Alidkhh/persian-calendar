@@ -161,6 +161,18 @@
          "meta": {
             "colSpan": 2
          }
+      },
+      {
+         "name": "Comp-13",
+         "type": "registry:component",
+         "description": "Min/Max Date",
+         "files": [
+            {
+               "path": "registry/default/components/Comp-13.vue",
+               "type": "registry:component"
+            }
+         ],
+         "registryDependencies": ["button", "range-calendar"]
       }
    ]
 }
