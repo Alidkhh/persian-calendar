@@ -88,7 +88,7 @@ const selectItemClasses =
    <ConfigProvider dir="rtl">
       <CalendarRoot
          data-slot="calendar"
-         v-slot="{ weekDays, grid, weekStartsOn }"
+         v-slot="{ weekDays, grid }"
          :class="
             cn(
                'bg-background rounded-lg border border-neutral-300 p-3',
@@ -158,6 +158,7 @@ const selectItemClasses =
                         <CalendarCellTrigger
                            :day="weekDate"
                            :month="month.value"
+                           class="[&[data-today]:not([data-selected])]:bg-unset [&[data-today]:not([data-selected])]:text-unset data-[today]:after:content-[' '] data-[today]:after:bg-primary data-[today]:data-[selected]:after:bg-primary-foreground data-[today]:after:absolute data-[today]:after:bottom-[5px] data-[today]:after:h-[3px] data-[today]:after:w-[3px] data-[today]:after:rounded-full"
                         />
                      </CalendarCell>
                   </CalendarGridRow>

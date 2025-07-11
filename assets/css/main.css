@@ -167,6 +167,10 @@ body {
    font-family: Inter !important;
 }
 
+[data-reka-popper-content-wrapper] {
+   font-family: Estedad;
+}
+
 .dir-rtl {
    direction: rtl;
 }

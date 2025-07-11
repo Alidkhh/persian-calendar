@@ -133,6 +133,7 @@ const placeholder = computed({
                         <CalendarCellTrigger
                            :day="weekDate"
                            :month="month.value"
+                           class="[&[data-today]:not([data-selected])]:bg-unset [&[data-today]:not([data-selected])]:text-unset data-[today]:after:content-[' '] data-[today]:after:bg-primary data-[today]:data-[selected]:after:bg-primary-foreground data-[today]:after:absolute data-[today]:after:bottom-[5px] data-[today]:after:h-[3px] data-[today]:after:w-[3px] data-[today]:after:rounded-full"
                         />
                      </CalendarCell>
                   </CalendarGridRow>
