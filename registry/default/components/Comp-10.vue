@@ -65,6 +65,7 @@ const modelValue = ref({
          v-model="modelValue"
          :numberOfMonths="2"
          :isDateUnavailable="isDateUnavailable"
+         disableDaysOutsideCurrentView
       >
          <RangeCalendarHeader>
             <RangeCalendarHeading class="dir-ltr" />
@@ -105,6 +106,8 @@ const modelValue = ref({
                            '[&:has([data-highlighted][data-highlighted-start])]:rounded-s-md [&:has([data-selected][data-selection-start])]:rounded-s-md',
                            // End
                            '[&:has([data-highlighted][data-highlighted-end])]:rounded-e-md [&:has([data-selected][data-selection-end])]:rounded-e-md',
+                           // Outside and Disabled
+                           '[&:has([data-outside-view][data-disabled])]:opacity-0',
                         ]"
                      >
                         <RangeCalendarCellTrigger
