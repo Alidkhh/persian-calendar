@@ -5,13 +5,13 @@
       <LayoutHeader />
 
       <LayoutBody>
-         <div class="relative flex flex-1 gap-5">
+         <div class="relative flex gap-5">
             <div
-               class="border-foreground/20 sticky top-[6rem] hidden h-full max-h-[calc(100vh-7.5rem)] w-[15rem] flex-shrink-0 overflow-y-auto border-e pe-2 text-sm md:block"
+               class="border-foreground/20 sticky top-[6rem] hidden max-h-[calc(100vh-7.5rem)] w-[15rem] flex-shrink-0 overflow-y-auto border-e pe-2 text-sm md:block"
             >
                <RoutesMenu />
             </div>
-            <div class="flex-1">
+            <div class="w-full overflow-hidden">
                <slot></slot>
             </div>
          </div>

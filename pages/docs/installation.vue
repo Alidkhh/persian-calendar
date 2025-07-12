@@ -26,13 +26,9 @@ if (!component) {
             >.
          </p>
          <p>After that you can install components with CLI.</p>
-         <div class="max-w-[90vw]">
-            <ComponentInstallation class="my-7" componentName="Comp-1" />
-         </div>
+         <ComponentInstallation class="my-7" componentName="Comp-1" />
          <p>Or copy the source code of the component you want.</p>
-         <div class="max-w-[90vw]">
-            <ComponentInstallationCode class="my-7" :component="component" />
-         </div>
+         <ComponentInstallationCode class="my-7" :component="component" />
          <p>
             It's best to remember that you can combine the features of different
             calendars and create new calendars.
