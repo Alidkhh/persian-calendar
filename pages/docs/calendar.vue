@@ -21,14 +21,14 @@ const components = getComponentsByNames(
 
 <template>
    <div
-      class="xxl:grid-cols-4 bg-foreground/20 mb-10 grid grid-cols-1 gap-[1px] md:grid-cols-2 lg:grid-cols-3"
+      class="bg-foreground/20 mb-10 grid grid-cols-1 gap-[1px] lg:grid-cols-2 xl:grid-cols-3"
    >
       <template v-for="component in components">
          <ComponentPreview
             :component="component"
             :class="
                component.meta?.colSpan === 2
-                  ? 'xxl:col-span-4 col-span-1 md:col-span-2 lg:col-span-3'
+                  ? 'col-span-1 lg:col-span-2 xl:col-span-3'
                   : ''
             "
          >

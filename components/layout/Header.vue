@@ -9,7 +9,7 @@ const config = useRuntimeConfig();
    <div
       class="bg-background sticky top-0 z-40 flex justify-center border-b-1 px-2 py-2 shadow-md"
    >
-      <div class="xxl:basis-7xl basis-full md:basis-11/12">
+      <div class="mx-auto w-full max-w-full md:w-11/12 2xl:w-[85rem]">
          <div class="flex items-center justify-between">
             <div class="flex items-center gap-1">
                <div class="block md:hidden">
