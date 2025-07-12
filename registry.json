@@ -173,6 +173,18 @@
             }
          ],
          "registryDependencies": ["button", "range-calendar"]
+      },
+      {
+         "name": "Comp-14",
+         "type": "registry:component",
+         "description": "Select Year & Month from list",
+         "files": [
+            {
+               "path": "registry/default/components/Comp-14.vue",
+               "type": "registry:component"
+            }
+         ],
+         "registryDependencies": ["button", "range"]
       }
    ]
 }
