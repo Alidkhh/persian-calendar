@@ -23,7 +23,7 @@ const libraries = [
 
 <template>
    <div class="w-full md:w-9/12">
-      <Header>Introduction</Header>
+      <Header>{{ routes.introduction.title }}</Header>
 
       <div class="mt-5 mb-20 [&>p]:my-6">
          <p>

@@ -17,11 +17,15 @@ export const routes: Routes = {
       route: "/docs/Installation",
    },
    calendar: {
-      title: "calendar",
-      route: "/docs/calendar",
+      title: "Calendars",
+      route: "/docs/Calendar",
+   },
+   datepicker: {
+      title: "Date Picker",
+      route: "/docs/DatePicker",
    },
    persianCalendar: {
       title: "Persian Calendar",
-      route: "/docs/persianCalendar",
+      route: "/docs/PersianCalendar",
    },
 };

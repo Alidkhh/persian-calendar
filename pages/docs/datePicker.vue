@@ -2,6 +2,6 @@
 
 <template>
    <div>
-      <Header>{{ routes.persianCalendar.title }}</Header>
+      <Header>{{ routes.datepicker.title }}</Header>
    </div>
 </template>

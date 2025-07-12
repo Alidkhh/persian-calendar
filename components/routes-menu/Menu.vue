@@ -15,7 +15,8 @@ const props = withDefaults(
 const menuItems = [
    routes.introduction,
    routes.installation,
-   { ...routes.calendar, title: "calendar components" },
+   { ...routes.calendar },
+   { ...routes.datepicker },
    { ...routes.persianCalendar, title: "<PersinaCalendar />" },
 ];
 </script>

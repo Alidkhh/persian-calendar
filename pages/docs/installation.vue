@@ -14,7 +14,7 @@ if (!component) {
 
 <template>
    <div class="w-full md:w-8/12">
-      <Header>Installation</Header>
+      <Header>{{ routes.installation.title }}</Header>
 
       <div class="mt-5 mb-20 [&>p]:my-6">
          <p>
