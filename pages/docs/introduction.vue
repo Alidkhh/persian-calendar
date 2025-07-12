@@ -3,20 +3,14 @@ const libraries = [
    {
       title: "Reka-ui",
       link: "https://reka-ui.com/",
-      description:
-         "Use as a base for components and create customizable, accessible and flexible ",
    },
    {
       title: "shadcn/vue",
       link: "https://www.shadcn-vue.com/",
-      description:
-         "use CLI for install components and get idea to create accessible components",
    },
    {
       title: "Internationalized/date",
       link: "https://react-spectrum.adobe.com/internationalized/date/index.html",
-      description:
-         "used for manipulating dates, change locale and work with jalali date(persian date)",
    },
 ];
 </script>
@@ -57,7 +51,6 @@ const libraries = [
                   class="text-blue-600 hover:underline"
                   >{{ lib.title }}</a
                >
-               <span> : {{ lib.description }}</span>
             </div>
          </div>
       </div>

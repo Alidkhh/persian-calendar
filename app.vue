@@ -12,11 +12,12 @@ import { SpeedInsights } from "@vercel/speed-insights/nuxt";
 <style>
 .page-enter-active,
 .page-leave-active {
-   transition: all 0.4s;
+   transition: all 0.5s;
 }
 .page-enter-from,
 .page-leave-to {
    opacity: 0;
-   transform: translate(0, 80px);
+   filter: blur(1px);
+   transform: translate(40px);
 }
 </style>
