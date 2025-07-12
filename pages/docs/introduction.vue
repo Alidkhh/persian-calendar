@@ -1,12 +1,23 @@
 <script lang="ts" setup>
 const libraries = [
-   { title: "Reka-ui", link: "https://reka-ui.com/" },
-   { title: "shadcn/vue", link: "https://www.shadcn-vue.com/" },
+   {
+      title: "Reka-ui",
+      link: "https://reka-ui.com/",
+      description:
+         "Use as a base for components and create customizable, accessible and flexible ",
+   },
+   {
+      title: "shadcn/vue",
+      link: "https://www.shadcn-vue.com/",
+      description:
+         "use CLI for install components and get idea to create accessible components",
+   },
    {
       title: "Internationalized/date",
       link: "https://react-spectrum.adobe.com/internationalized/date/index.html",
+      description:
+         "used for manipulating dates, change locale and work with jalali date(persian date)",
    },
-   { title: "shadcn/ui", link: "https://ui.shadcn.com/" },
 ];
 </script>
 
@@ -37,19 +48,17 @@ const libraries = [
             In this project we follow the idea of shadcn and use tailwindCSS for
             styling.
          </p>
-         <p>
-            We mainly use or take ideas from the following libraries in this
-            project:
-         </p>
+         <p>The following libraries are mainly used in this project:</p>
          <div class="mt-1 inline-flex flex-col gap-3">
-            <a
-               v-for="lib in libraries"
-               :key="lib.title"
-               target="_blank"
-               :href="lib.link"
-               class="text-blue-600 hover:underline"
-               >{{ lib.title }}</a
-            >
+            <div v-for="lib in libraries" :key="lib.title">
+               <a
+                  target="_blank"
+                  :href="lib.link"
+                  class="text-blue-600 hover:underline"
+                  >{{ lib.title }}</a
+               >
+               <span> : {{ lib.description }}</span>
+            </div>
          </div>
       </div>
    </div>
