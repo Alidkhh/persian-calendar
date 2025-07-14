@@ -54,12 +54,16 @@ const todayDate = toCalendar(
    createCalendar("persian"),
 );
 
+const model: DateValue = props.modelValue
+   ? (props.modelValue as DateValue)
+   : todayDate;
+
 const modelValue = ref(
    new CalendarDateTime(
       new PersianCalendar(),
-      todayDate.year,
-      todayDate.month,
-      todayDate.day,
+      model.year,
+      model.month,
+      model.day,
       12,
       30,
       0,

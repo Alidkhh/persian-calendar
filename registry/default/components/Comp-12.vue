@@ -42,12 +42,17 @@ const delegatedProps = reactiveOmit(props, "class");
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits);
 
-const start = toCalendar(today(getLocalTimeZone()), createCalendar("persian"));
+const todayDate = toCalendar(
+   today(getLocalTimeZone()),
+   createCalendar("persian"),
+);
+
+const start = todayDate;
 const end = start.add({ days: 6 });
 
 const modelValue = ref({
-   start,
-   end,
+   start: props.modelValue?.start ? props.modelValue.start : start,
+   end: props.modelValue?.end ? props.modelValue.end : end,
 }) as Ref<DateRange>;
 
 const startDatePlaceholder = ref();

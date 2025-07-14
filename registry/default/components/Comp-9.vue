@@ -54,8 +54,8 @@ const start = todayDate;
 const end = start.add({ days: 7 });
 
 const modelValue = ref({
-   start,
-   end,
+   start: props.modelValue?.start ? props.modelValue.start : start,
+   end: props.modelValue?.end ? props.modelValue.end : end,
 }) as Ref<DateRange>;
 
 type Preset = {

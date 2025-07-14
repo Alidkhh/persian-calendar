@@ -61,7 +61,9 @@ const todayDate = toCalendar(
    createCalendar("persian"),
 );
 
-const modelValue = ref(todayDate) as Ref<DateValue>;
+const modelValue = ref(
+   props.modelValue ? props.modelValue : todayDate,
+) as Ref<DateValue>;
 
 const years = Array.from({ length: 40 }, (_, i) => todayDate.year - 20 + i);
 

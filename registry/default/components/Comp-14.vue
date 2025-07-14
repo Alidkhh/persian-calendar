@@ -61,11 +61,13 @@ const todayDate = toCalendar(
    createCalendar("persian"),
 );
 
-const modelValue = ref(todayDate) as Ref<DateValue>;
+const modelValue = ref(
+   props.modelValue ? props.modelValue : todayDate,
+) as Ref<DateValue>;
 
 const placeholderDate = ref({
-   year: todayDate.year,
-   month: todayDate.month,
+   year: modelValue.value.year,
+   month: modelValue.value.month,
 });
 
 const placeholder = computed({

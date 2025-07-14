@@ -54,7 +54,9 @@ const todayDate = toCalendar(
    createCalendar("persian"),
 );
 
-const modelValue = ref(todayDate) as Ref<DateValue>;
+const modelValue = ref(
+   props.modelValue ? props.modelValue : todayDate,
+) as Ref<DateValue>;
 
 const presets = [
    {
