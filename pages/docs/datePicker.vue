@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import datePicker from "@/components/date-picker/index.vue?raw";
+import datePickerRange from "@/components/date-picker/range.vue?raw";
 </script>
 
 <template>
@@ -28,6 +29,10 @@ import datePicker from "@/components/date-picker/index.vue?raw";
          </p>
          <BlockViewerCode :rawCode="datePicker">
             <DatePicker class="font-fa" />
+         </BlockViewerCode>
+         <p>and use popover for Range Calendar.</p>
+         <BlockViewerCode :rawCode="datePickerRange">
+            <DatePickerRange class="font-fa" />
          </BlockViewerCode>
       </div>
    </div>

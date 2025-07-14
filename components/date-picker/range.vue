@@ -1,31 +1,39 @@
 <script lang="ts" setup>
 import {
    DateFormatter,
-   type DateValue,
    getLocalTimeZone,
    today,
    toCalendar,
    createCalendar,
 } from "@internationalized/date";
+import type { DateRange } from "reka-ui";
+
 import {
    Popover,
    PopoverTrigger,
    PopoverContent,
 } from "@/registry/default/ui/popover";
 import { Input } from "@/registry/default/ui/input";
-import Comp14 from "@/registry/default/components/Comp-14.vue";
+import Comp5 from "@/registry/default/components/Comp-5.vue";
 
 const todayDate = toCalendar(
    today(getLocalTimeZone()),
    createCalendar("persian"),
 );
 
-const modelValue = ref(todayDate) as Ref<DateValue>;
+const start = todayDate;
+const end = start.add({ days: 3 });
+
+const modelValue = ref({ start, end }) as Ref<{
+   start: typeof start;
+   end: typeof end;
+}>;
 
 const formatDate = computed(() => {
-   return new DateFormatter("fa-IR").format(
-      modelValue.value.toDate(getLocalTimeZone()),
-   );
+   const formatter = new DateFormatter("fa-IR");
+   return `${formatter.format(modelValue.value.start.toDate(getLocalTimeZone()))} - ${formatter.format(
+      modelValue.value.end.toDate(getLocalTimeZone()),
+   )}`;
 });
 </script>
 
@@ -42,7 +50,7 @@ const formatDate = computed(() => {
             />
          </PopoverTrigger>
          <PopoverContent class="w-auto border-none p-0 shadow-none">
-            <Comp14 v-model="modelValue" />
+            <Comp5 v-model="modelValue" />
          </PopoverContent>
       </Popover>
    </div>
