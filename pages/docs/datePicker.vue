@@ -8,8 +8,8 @@ import datePickerRange from "@/components/date-picker/range.vue?raw";
       <Header>{{ routes.datepicker.title }}</Header>
       <div class="[&>p]:my-6">
          <p>
-            for use calendar components as Date Picker you can use shadcn/vue or
-            reka-ui popover.
+            The Date Picker is built using a composition of the Popover and
+            Calendar or Range Calendar components.
          </p>
          <p>
             See installations instructions for the
@@ -27,11 +27,15 @@ import datePickerRange from "@/components/date-picker/range.vue?raw";
             >
             components.
          </p>
-         <BlockViewerCode :rawCode="datePicker">
+         <BlockViewerCode title="Date Picker" :rawCode="datePicker">
             <DatePicker class="font-fa" />
          </BlockViewerCode>
-         <p>and use popover for Range Calendar.</p>
-         <BlockViewerCode :rawCode="datePickerRange">
+         <!-- <p>and use popover for Range Calendars.</p> -->
+         <BlockViewerCode
+            title="Date Range Picker"
+            :rawCode="datePickerRange"
+            class="mt-10"
+         >
             <DatePickerRange class="font-fa" />
          </BlockViewerCode>
       </div>

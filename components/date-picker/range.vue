@@ -6,8 +6,6 @@ import {
    toCalendar,
    createCalendar,
 } from "@internationalized/date";
-import type { DateRange } from "reka-ui";
-
 import {
    Popover,
    PopoverTrigger,

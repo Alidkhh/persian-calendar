@@ -4,7 +4,8 @@ import { codeToHtml } from "shiki";
 import { MagicString } from "vue/compiler-sfc";
 
 const props = defineProps<{
-   rawCode: any;
+   title: string;
+   rawCode: string;
 }>();
 
 const html = shallowRef("");
@@ -29,29 +30,32 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-   <Tabs default-value="preview" class="">
-      <TabsList class="grid grid-cols-2">
-         <TabsTrigger value="preview"> <Eye /> Preview </TabsTrigger>
-         <TabsTrigger value="code"> <Code /> Code </TabsTrigger>
-      </TabsList>
-      <Separator />
-      <TabsContent value="preview">
-         <div
-            class="bg-muted-foreground/30 flex min-h-[25rem] w-full flex-col items-center justify-center rounded-xl border px-2 py-5"
-         >
-            <div>
-               <slot></slot>
-            </div>
-         </div>
-      </TabsContent>
-      <TabsContent value="code">
-         <div class="relative">
+   <div>
+      <h3 class="text-xl font-bold mb-2">{{ title }}</h3>
+      <Tabs default-value="preview" class="">
+         <TabsList class="grid grid-cols-2">
+            <TabsTrigger value="preview"> <Eye /> Preview </TabsTrigger>
+            <TabsTrigger value="code"> <Code /> Code </TabsTrigger>
+         </TabsList>
+         <Separator />
+         <TabsContent value="preview">
             <div
-               class="[&_code]:font-mono [&_code]:text-[13px] [&_pre]:max-h-[25rem] [&_pre]:overflow-auto [&_pre]:rounded-xl [&_pre]:bg-zinc-900! [&_pre]:p-4 [&_pre]:leading-snug dark:[&_pre]:bg-zinc-900!"
-               v-html="html"
-            ></div>
-            <CopyButton :text="code" class="absolute top-2 right-3" />
-         </div>
-      </TabsContent>
-   </Tabs>
+               class="bg-muted flex min-h-[25rem] w-full flex-col items-center justify-center rounded-xl border px-2 py-5"
+            >
+               <div>
+                  <slot></slot>
+               </div>
+            </div>
+         </TabsContent>
+         <TabsContent value="code">
+            <div class="relative">
+               <div
+                  class="[&_code]:font-mono [&_code]:text-[13px] [&_pre]:max-h-[25rem] [&_pre]:overflow-auto [&_pre]:rounded-xl [&_pre]:bg-zinc-900! [&_pre]:p-4 [&_pre]:leading-snug dark:[&_pre]:bg-zinc-900!"
+                  v-html="html"
+               ></div>
+               <CopyButton :text="code" class="absolute top-2 right-3" />
+            </div>
+         </TabsContent>
+      </Tabs>
+   </div>
 </template>
