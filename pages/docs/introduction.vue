@@ -5,7 +5,7 @@ const libraries = [
       link: "https://reka-ui.com/",
    },
    {
-      title: "shadcn/vue",
+      title: "Shadcn/vue",
       link: "https://www.shadcn-vue.com/",
    },
    {

@@ -13,10 +13,10 @@ if (!component) {
 </script>
 
 <template>
-   <div class="w-full md:w-8/12">
+   <div class="mb-20 w-full md:w-8/12">
       <Header>{{ routes.installation.title }}</Header>
 
-      <div class="mt-5 mb-20 [&>p]:my-6">
+      <div class="mt-5 [&>p]:my-6">
          <p>
             To install the components, you need to follow the
             <a
