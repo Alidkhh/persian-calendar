@@ -22,7 +22,7 @@ const menuItems = [
 </script>
 
 <template>
-   <div :class="cn('flex flex-col gap-2', props.class)">
+   <div :class="cn('flex flex-col gap-3', props.class)">
       <DrawerClose v-if="withDrawerClose" as-child v-for="item in menuItems">
          <RoutesMenuItem :title="item.title" :route="item.route" />
       </DrawerClose>

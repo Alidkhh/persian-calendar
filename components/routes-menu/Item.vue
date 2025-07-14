@@ -10,11 +10,11 @@ const props = defineProps<{
 <template>
    <NuxtLink
       :to="props.route"
-      class="hover:bg-muted-foreground/30 text-md w-full cursor-pointer justify-start rounded-lg px-2.5 py-1.5"
+      class="text-md w-full cursor-pointer justify-start rounded-lg px-2.5 py-1.5"
       :class="
          route.fullPath == props.route
-            ? 'bg-muted-foreground/40 hover:bg-muted-foreground/40 font-bold'
-            : ''
+            ? 'bg-primary text-primary-foreground'
+            : 'hover:bg-muted'
       "
    >
       {{ props.title }}
