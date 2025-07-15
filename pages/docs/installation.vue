@@ -14,7 +14,7 @@ if (!component) {
 
 <template>
    <div class="mb-20 w-full md:w-8/12">
-      <Header>{{ routes.installation.title }}</Header>
+      <HeadTitle>{{ routes.installation.title }}</HeadTitle>
 
       <div class="mt-5 [&>p]:my-6">
          <p>
@@ -26,9 +26,9 @@ if (!component) {
             >.
          </p>
          <p>After that you can install components with CLI.</p>
-         <ComponentInstallation class="my-7" componentName="Comp-1" />
+         <InstallComponentCLI class="my-7" componentName="Comp-1" />
          <p>Or copy the source code of the component you want.</p>
-         <ComponentInstallationCode class="my-7" :component="component" />
+         <InstallComponentCodes class="my-7" :component="component" />
          <p>
             It's best to remember that you can combine the features of different
             calendars and create new calendars.

@@ -4,6 +4,7 @@ export default defineNuxtConfig({
    $development: {
       debug: true,
    },
+
    app: {
       pageTransition: { name: "page", mode: "out-in" },
       head: {
@@ -42,9 +43,6 @@ export default defineNuxtConfig({
 
    routeRules: {
       "/": { prerender: true },
-      "/docs/Introduction": { prerender: true },
-      "/docs/Installation": { prerender: true },
-      "/docs/calendar": { prerender: true },
-      "/docs/persianCalendar": { prerender: true },
+      "/docs/**": { prerender: true },
    },
 });

@@ -5,7 +5,7 @@ import datePickerRange from "@/components/date-picker/range.vue?raw";
 
 <template>
    <div class="mb-25 w-full md:w-8/12">
-      <Header>{{ routes.datepicker.title }}</Header>
+      <HeadTitle>{{ routes.datepicker.title }}</HeadTitle>
       <div class="[&>p]:my-6">
          <p>
             The Date Picker is built using a composition of the Popover and

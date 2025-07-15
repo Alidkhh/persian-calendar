@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { HTMLAttributes } from "vue";
 import { cn } from "~/lib/utils";
+import { DrawerClose } from "@/registry/default/ui/drawer";
 
 const props = withDefaults(
    defineProps<{
@@ -23,15 +24,13 @@ const menuItems = [
 
 <template>
    <div :class="cn('flex flex-col gap-3', props.class)">
-      <DrawerClose v-if="withDrawerClose" as-child v-for="item in menuItems">
-         <RoutesMenuItem :title="item.title" :route="item.route" />
-      </DrawerClose>
-
-      <RoutesMenuItem
-         v-else
+      <component
+         :is="withDrawerClose ? DrawerClose : 'div'"
          v-for="item in menuItems"
-         :title="item.title"
-         :route="item.route"
-      />
+         :key="item.route"
+         v-bind="withDrawerClose ? { asChild: true } : { class: 'flex' }"
+      >
+         <RoutesMenuItem :title="item.title" :route="item.route" />
+      </component>
    </div>
 </template>

@@ -16,12 +16,12 @@ const props = defineProps<{
          </DialogHeader>
 
          <div class="flex w-full flex-col gap-4 overflow-hidden">
-            <ComponentInstallation
+            <InstallComponentCLI
                class="mt-5"
                :component-name="component.name"
             />
 
-            <ComponentInstallationCode :component="component" />
+            <InstallComponentCodes :component="component" />
          </div>
       </DialogContent>
    </Dialog>

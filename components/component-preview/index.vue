@@ -54,5 +54,5 @@ const dialog = ref(false);
       <slot></slot>
    </div>
 
-   <ComponentInstallationDialog v-model:open="dialog" :component="component" />
+   <InstallComponentDialog v-model:open="dialog" :component="component" />
 </template>

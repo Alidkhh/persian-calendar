@@ -18,7 +18,7 @@ export const routes: Routes = {
    },
    calendar: {
       title: "Calendars",
-      route: "/docs/Calendar",
+      route: "/docs/Calendars",
    },
    datepicker: {
       title: "Date Picker",

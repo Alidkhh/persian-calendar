@@ -2,6 +2,6 @@
 
 <template>
    <div>
-      <Header>{{ routes.persianCalendar.title }}</Header>
+      <HeadTitle>{{ routes.persianCalendar.title }}</HeadTitle>
    </div>
 </template>
