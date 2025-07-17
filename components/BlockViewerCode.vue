@@ -31,7 +31,7 @@ onBeforeMount(async () => {
 
 <template>
    <div>
-      <h3 class="text-xl font-bold mb-2">{{ title }}</h3>
+      <h3 class="mb-2 text-xl font-bold">{{ title }}</h3>
       <Tabs default-value="preview" class="">
          <TabsList class="grid grid-cols-2">
             <TabsTrigger value="preview"> <Eye /> Preview </TabsTrigger>
