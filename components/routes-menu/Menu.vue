@@ -16,7 +16,7 @@ const props = withDefaults(
 interface menuItems {
    title: string;
    route: string;
-   status?: "done" | "not compeleted";
+   status?: "compeleted" | "not compeleted";
 }
 
 const menuItems: menuItems[] = [

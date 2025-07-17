@@ -6,7 +6,7 @@ const route = useRoute();
 const props = defineProps<{
    title: string;
    route: string;
-   status: "done" | "not compeleted";
+   status?: "compeleted" | "not compeleted";
 }>();
 </script>
 
