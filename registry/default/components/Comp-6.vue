@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { ref, computed, type HTMLAttributes, type Ref } from "vue";
 import { Button } from "@/registry/default/ui/button";
 import {
    CalendarCell,
@@ -29,7 +30,6 @@ import {
    PersianCalendar,
    CalendarDateTime,
 } from "@internationalized/date";
-import type { HTMLAttributes } from "vue";
 import { reactiveOmit } from "@vueuse/core";
 
 const props = withDefaults(

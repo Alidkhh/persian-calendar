@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from "vue";
+import { ref, type HTMLAttributes, type Ref } from "vue";
 import { reactiveOmit } from "@vueuse/core";
 import {
    RangeCalendarRoot,

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
+import { ref, type HTMLAttributes, type Ref } from "vue";
 import { Button } from "@/registry/default/ui/button";
-import type { HTMLAttributes } from "vue";
 import { reactiveOmit } from "@vueuse/core";
 import {
    CalendarCell,
