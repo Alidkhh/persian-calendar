@@ -13,18 +13,13 @@ type PackageManager = {
 
 const packageManagers = ref<PackageManager[]>([
    {
-      name: "pnpm",
-      command: `pnpm dlx shadcn-vue@latest add ${config.public.baseUrl}/r/${props.componentName}.json`,
+      name: "npm",
+      command: `npx shadcn-vue@latest add ${config.public.baseUrl}/r/${props.componentName}.json`,
       isActive: true,
    },
    {
-      name: "yarn",
-      command: `npx shadcn-vue@latest add ${config.public.baseUrl}/r/${props.componentName}.json`,
-      isActive: false,
-   },
-   {
-      name: "npm",
-      command: `npx shadcn-vue@latest add ${config.public.baseUrl}/r/${props.componentName}.json`,
+      name: "pnpm",
+      command: `pnpm dlx shadcn-vue@latest add ${config.public.baseUrl}/r/${props.componentName}.json`,
       isActive: false,
    },
    {
@@ -32,6 +27,11 @@ const packageManagers = ref<PackageManager[]>([
       command: `bunx --bun shadcn-vue@latest add ${config.public.baseUrl}/r/${props.componentName}.json`,
       isActive: false,
    },
+   // {
+   //    name: "yarn",
+   //    command: `npx shadcn-vue@latest add ${config.public.baseUrl}/r/${props.componentName}.json`,
+   //    isActive: false,
+   // },
 ]);
 const setActivePackageManager = (clickedItem: PackageManager) => {
    packageManagers.value.forEach((item) => {

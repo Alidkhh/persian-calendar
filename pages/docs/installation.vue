@@ -22,6 +22,7 @@ if (!component) {
             <a
                href="https://www.shadcn-vue.com/docs/installation.html"
                class="text-blue-600 underline"
+               target="_blank"
                >shadcn/vue installation guide</a
             >.
          </p>
