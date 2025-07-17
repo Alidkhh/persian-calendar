@@ -13,12 +13,22 @@ const props = withDefaults(
    },
 );
 
-const menuItems = [
+interface menuItems {
+   title: string;
+   route: string;
+   status?: "done" | "not compeleted";
+}
+
+const menuItems: menuItems[] = [
    routes.introduction,
    routes.installation,
    { ...routes.calendar },
    { ...routes.datepicker },
-   { ...routes.persianCalendar, title: "<PersinaCalendar />" },
+   {
+      ...routes.persianCalendar,
+      title: "<PersinaCalendar />",
+      status: "not compeleted",
+   },
 ];
 </script>
 
@@ -30,7 +40,11 @@ const menuItems = [
          :key="item.route"
          v-bind="withDrawerClose ? { asChild: true } : { class: 'flex' }"
       >
-         <RoutesMenuItem :title="item.title" :route="item.route" />
+         <RoutesMenuItem
+            :title="item.title"
+            :route="item.route"
+            :status="item.status"
+         />
       </component>
    </div>
 </template>
