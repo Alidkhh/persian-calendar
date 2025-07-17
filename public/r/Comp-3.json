@@ -3,6 +3,9 @@
   "name": "Comp-3",
   "type": "registry:component",
   "description": "Disabled dates",
+  "dependencies": [
+    "@internationalized/date"
+  ],
   "registryDependencies": [
     "button",
     "calendar"

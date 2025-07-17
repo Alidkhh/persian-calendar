@@ -3,6 +3,9 @@
   "name": "Comp-10",
   "type": "registry:component",
   "description": "Two months range calendar",
+  "dependencies": [
+    "@internationalized/date"
+  ],
   "registryDependencies": [
     "button",
     "range-calendar"

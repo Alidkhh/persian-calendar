@@ -3,6 +3,9 @@
   "name": "Comp-14",
   "type": "registry:component",
   "description": "Select Year & Month from list",
+  "dependencies": [
+    "@internationalized/date"
+  ],
   "registryDependencies": [
     "button",
     "range"

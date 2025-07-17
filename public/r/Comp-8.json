@@ -3,6 +3,9 @@
   "name": "Comp-8",
   "type": "registry:component",
   "description": "Calendar with presets",
+  "dependencies": [
+    "@internationalized/date"
+  ],
   "registryDependencies": [
     "button",
     "calendar"

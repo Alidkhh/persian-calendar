@@ -3,6 +3,9 @@
   "name": "Comp-12",
   "type": "registry:component",
   "description": "Two months range calendar Separate header",
+  "dependencies": [
+    "@internationalized/date"
+  ],
   "registryDependencies": [
     "button",
     "range-calendar"

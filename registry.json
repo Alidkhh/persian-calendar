@@ -13,7 +13,8 @@
                "type": "registry:component"
             }
          ],
-         "registryDependencies": ["button", "calendar"]
+         "registryDependencies": ["button", "calendar"],
+         "dependencies": ["@internationalized/date"]
       },
       {
          "name": "Comp-2",
@@ -25,7 +26,8 @@
                "type": "registry:component"
             }
          ],
-         "registryDependencies": ["button", "calendar"]
+         "registryDependencies": ["button", "calendar"],
+         "dependencies": ["@internationalized/date"]
       },
       {
          "name": "Comp-3",
@@ -37,7 +39,8 @@
                "type": "registry:component"
             }
          ],
-         "registryDependencies": ["button", "calendar"]
+         "registryDependencies": ["button", "calendar"],
+         "dependencies": ["@internationalized/date"]
       },
       {
          "name": "Comp-4",
@@ -49,7 +52,8 @@
                "type": "registry:component"
             }
          ],
-         "registryDependencies": ["button", "calendar"]
+         "registryDependencies": ["button", "calendar"],
+         "dependencies": ["@internationalized/date"]
       },
       {
          "name": "Comp-5",
@@ -61,7 +65,8 @@
                "type": "registry:component"
             }
          ],
-         "registryDependencies": ["button", "range-calendar"]
+         "registryDependencies": ["button", "range-calendar"],
+         "dependencies": ["@internationalized/date"]
       },
       {
          "name": "Comp-6",
@@ -74,6 +79,7 @@
             }
          ],
          "registryDependencies": ["button", "calendar"],
+         "dependencies": ["@internationalized/date"],
          "meta": {
             "colSpan": 2
          }
@@ -88,7 +94,8 @@
                "type": "registry:component"
             }
          ],
-         "registryDependencies": ["button", "calendar", "collapsible"]
+         "registryDependencies": ["button", "calendar", "collapsible"],
+         "dependencies": ["@internationalized/date"]
       },
       {
          "name": "Comp-8",
@@ -101,6 +108,7 @@
             }
          ],
          "registryDependencies": ["button", "calendar"],
+         "dependencies": ["@internationalized/date"],
          "meta": {
             "colSpan": 2
          }
@@ -116,6 +124,7 @@
             }
          ],
          "registryDependencies": ["button", "range-calendar"],
+         "dependencies": ["@internationalized/date"],
          "meta": {
             "colSpan": 2
          }
@@ -131,6 +140,7 @@
             }
          ],
          "registryDependencies": ["button", "range-calendar"],
+         "dependencies": ["@internationalized/date"],
          "meta": {
             "colSpan": 2
          }
@@ -145,7 +155,8 @@
                "type": "registry:component"
             }
          ],
-         "registryDependencies": ["button", "calendar"]
+         "registryDependencies": ["button", "calendar"],
+         "dependencies": ["@internationalized/date"]
       },
       {
          "name": "Comp-12",
@@ -158,6 +169,7 @@
             }
          ],
          "registryDependencies": ["button", "range-calendar"],
+         "dependencies": ["@internationalized/date"],
          "meta": {
             "colSpan": 2
          }
@@ -172,7 +184,8 @@
                "type": "registry:component"
             }
          ],
-         "registryDependencies": ["button", "range-calendar"]
+         "registryDependencies": ["button", "range-calendar"],
+         "dependencies": ["@internationalized/date"]
       },
       {
          "name": "Comp-14",
@@ -184,7 +197,8 @@
                "type": "registry:component"
             }
          ],
-         "registryDependencies": ["button", "range"]
+         "registryDependencies": ["button", "range"],
+         "dependencies": ["@internationalized/date"]
       }
    ]
 }

@@ -3,6 +3,9 @@
   "name": "Comp-6",
   "type": "registry:component",
   "description": "Appointment Picker",
+  "dependencies": [
+    "@internationalized/date"
+  ],
   "registryDependencies": [
     "button",
     "calendar"

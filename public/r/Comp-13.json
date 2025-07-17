@@ -3,6 +3,9 @@
   "name": "Comp-13",
   "type": "registry:component",
   "description": "Min/Max Date",
+  "dependencies": [
+    "@internationalized/date"
+  ],
   "registryDependencies": [
     "button",
     "range-calendar"

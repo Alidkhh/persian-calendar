@@ -3,6 +3,9 @@
   "name": "Comp-7",
   "type": "registry:component",
   "description": "Collapsible selection",
+  "dependencies": [
+    "@internationalized/date"
+  ],
   "registryDependencies": [
     "button",
     "calendar",

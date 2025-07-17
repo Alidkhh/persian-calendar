@@ -3,6 +3,9 @@
   "name": "Comp-4",
   "type": "registry:component",
   "description": "Monthly / yearly selects",
+  "dependencies": [
+    "@internationalized/date"
+  ],
   "registryDependencies": [
     "button",
     "calendar"

@@ -3,6 +3,9 @@
   "name": "Comp-11",
   "type": "registry:component",
   "description": "Multiple day selection ",
+  "dependencies": [
+    "@internationalized/date"
+  ],
   "registryDependencies": [
     "button",
     "calendar"

@@ -3,6 +3,9 @@
   "name": "Comp-1",
   "type": "registry:component",
   "description": "Calendar",
+  "dependencies": [
+    "@internationalized/date"
+  ],
   "registryDependencies": [
     "button",
     "calendar"

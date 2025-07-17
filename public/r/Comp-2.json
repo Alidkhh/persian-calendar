@@ -3,6 +3,9 @@
   "name": "Comp-2",
   "type": "registry:component",
   "description": "Calendar with footer",
+  "dependencies": [
+    "@internationalized/date"
+  ],
   "registryDependencies": [
     "button",
     "calendar"

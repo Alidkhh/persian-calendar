@@ -3,6 +3,9 @@
   "name": "Comp-9",
   "type": "registry:component",
   "description": "Range Calendar with presets",
+  "dependencies": [
+    "@internationalized/date"
+  ],
   "registryDependencies": [
     "button",
     "range-calendar"
