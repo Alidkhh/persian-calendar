@@ -85,7 +85,7 @@ const presets = [
 <template>
    <ConfigProvider dir="rtl">
       <div
-         class="bg-background dir-rtl rounded-lg border border-neutral-300 p-3"
+         class="bg-background dir-rtl w-fit rounded-lg border border-neutral-300 p-3"
       >
          <div class="flex gap-4 max-sm:flex-col">
             <div class="relative max-sm:order-1 max-sm:border-t sm:w-32">

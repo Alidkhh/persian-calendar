@@ -118,7 +118,7 @@ const selectMonth = (year: number, month: number) => {
          v-slot="{ weekDays, grid }"
          :class="
             cn(
-               'bg-background relative overflow-hidden rounded-lg border border-neutral-300 p-3',
+               'bg-background relative w-fit overflow-hidden rounded-lg border border-neutral-300 p-3',
                props.class,
             )
          "

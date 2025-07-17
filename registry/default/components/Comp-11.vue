@@ -93,7 +93,7 @@ const placeholder = computed({
          v-slot="{ weekDays, grid }"
          :class="
             cn(
-               'bg-background rounded-lg border border-neutral-300 p-3',
+               'bg-background w-fit rounded-lg border border-neutral-300 p-3',
                props.class,
             )
          "
