@@ -22,6 +22,8 @@ import {
    CalendarNextButton,
    CalendarPrevButton,
 } from "@/registry/default/ui/calendar";
+import { Separator } from "@/registry/default/ui/separator";
+import { Button } from "@/registry/default/ui/button";
 import {
    type DateValue,
    createCalendar,
@@ -83,18 +85,16 @@ const placeholder = computed({
 });
 
 const footerDateString = computed(() => {
-   if (modelValue.value) {
-      return toCalendar(
-         parseDate(String(modelValue.value)),
-         createCalendar("persian"),
-      )
-         .toDate(getLocalTimeZone())
-         .toLocaleString("fa-IR", {
-            year: "numeric",
-            month: "numeric",
-            day: "numeric",
-         });
-   }
+   return toCalendar(
+      parseDate(String(modelValue.value)),
+      createCalendar("persian"),
+   )
+      .toDate(getLocalTimeZone())
+      .toLocaleString("fa-IR", {
+         year: "numeric",
+         month: "numeric",
+         day: "numeric",
+      });
 });
 
 const setToday = () => {

@@ -26,7 +26,7 @@
                "type": "registry:component"
             }
          ],
-         "registryDependencies": ["button", "calendar"],
+         "registryDependencies": ["button", "calendar", "separator"],
          "dependencies": ["@internationalized/date"]
       },
       {
@@ -123,7 +123,7 @@
                "type": "registry:component"
             }
          ],
-         "registryDependencies": ["button", "range-calendar"],
+         "registryDependencies": ["button", "range-calendar", "separator"],
          "dependencies": ["@internationalized/date"],
          "meta": {
             "colSpan": 2

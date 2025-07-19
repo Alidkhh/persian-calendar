@@ -9,7 +9,6 @@ import {
    useForwardPropsEmits,
    ConfigProvider,
 } from "reka-ui";
-import { cn } from "@/lib/utils";
 import {
    getLocalTimeZone,
    today,
@@ -33,6 +32,7 @@ import {
    RangeCalendarNextButton,
    RangeCalendarPrevButton,
 } from "@/registry/default/ui/range-calendar";
+import { Separator } from "@/registry/default/ui/separator";
 
 const props = withDefaults(
    defineProps<RangeCalendarRootProps & { class?: HTMLAttributes["class"] }>(),
