@@ -1,13 +1,11 @@
 <script lang="ts" setup>
-import { Moon, Sun } from "lucide-vue-next";
+import { Moon, Sun, Menu } from "lucide-vue-next";
 
 const config = useRuntimeConfig();
+const colorMode = useColorMode();
 
-const darkTheme = ref(false);
-
-function changeTheme() {
-   document.body.classList.toggle("dark");
-   darkTheme.value = document.body.classList.value.includes("dark");
+function toggleTheme() {
+   colorMode.preference = colorMode.value === "light" ? "dark" : "light";
 }
 </script>
 
@@ -43,9 +41,9 @@ function changeTheme() {
                      />
                   </Button>
                </a>
-               <Button variant="ghost" size="icon" @click="changeTheme">
+               <Button variant="ghost" size="icon" @click="toggleTheme">
                   <Moon
-                     v-if="darkTheme"
+                     v-if="colorMode.value === 'dark'"
                      class="text-foreground/60 hover:text-foreground/80 size-5"
                   />
                   <Sun

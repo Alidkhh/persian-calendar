@@ -20,7 +20,7 @@ export default defineNuxtConfig({
       plugins: [tailwindcss()],
    },
 
-   modules: ["@nuxt/fonts", "shadcn-nuxt", "@nuxt/image"],
+   modules: ["@nuxt/fonts", "shadcn-nuxt", "@nuxt/image", "@nuxtjs/color-mode"],
 
    fonts: {
       families: [
@@ -44,5 +44,11 @@ export default defineNuxtConfig({
    routeRules: {
       "/": { prerender: true },
       "/docs/**": { prerender: true },
+   },
+
+   colorMode: {
+      preference: "system",
+      fallback: "light",
+      classSuffix: "",
    },
 });
