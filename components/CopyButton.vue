@@ -16,8 +16,9 @@ const { copied, copy } = useClipboard();
          <Tooltip>
             <TooltipTrigger as-child>
                <Button
-                  class="hover:bg-unset hover:text-unset text-white"
+                  class="text-white"
                   size="sm"
+                  variant="ghost"
                   @click="copy(props.text ?? '')"
                >
                   <template v-if="copied">

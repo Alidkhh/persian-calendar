@@ -113,7 +113,7 @@ const setToday = () => {
          v-slot="{ weekDays, grid }"
          :class="
             cn(
-               'bg-background w-fit rounded-lg border border-neutral-300 p-3',
+               'bg-background border-border w-fit rounded-lg border p-3',
                props.class,
             )
          "

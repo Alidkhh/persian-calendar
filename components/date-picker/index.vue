@@ -34,7 +34,7 @@ const formatDate = computed(() => {
       <Popover>
          <PopoverTrigger as-child>
             <Input
-               class="bg-white text-center"
+               class="!bg-primary-foreground text-center"
                type="text"
                placeholder="Pick a date"
                readonly

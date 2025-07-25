@@ -120,7 +120,7 @@
    }
 
    body {
-      @apply bg-background text-foreground;
+      @apply bg-background text-foreground transition-all duration-500;
    }
 
    ::selection {

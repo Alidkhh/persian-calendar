@@ -1,8 +1,14 @@
 <script lang="ts" setup>
-import GithubIcon from "~/components/GithubIcon.vue";
-import { Menu } from "lucide-vue-next";
+import { Moon, Sun } from "lucide-vue-next";
 
 const config = useRuntimeConfig();
+
+const darkTheme = ref(false);
+
+function changeTheme() {
+   document.body.classList.toggle("dark");
+   darkTheme.value = document.body.classList.value.includes("dark");
+}
 </script>
 
 <template>
@@ -29,13 +35,25 @@ const config = useRuntimeConfig();
                   >Persian Calendar</NuxtLink
                >
             </div>
-            <a :href="config.public.github" target="_blank">
-               <Button variant="ghost" size="icon">
-                  <GithubIcon
+            <div class="flex items-center gap-2">
+               <a :href="config.public.github" target="_blank">
+                  <Button variant="ghost" size="icon">
+                     <GithubIcon
+                        class="text-foreground/60 hover:text-foreground/80 size-5"
+                     />
+                  </Button>
+               </a>
+               <Button variant="ghost" size="icon" @click="changeTheme">
+                  <Moon
+                     v-if="darkTheme"
+                     class="text-foreground/60 hover:text-foreground/80 size-5"
+                  />
+                  <Sun
+                     v-else
                      class="text-foreground/60 hover:text-foreground/80 size-5"
                   />
                </Button>
-            </a>
+            </div>
          </div>
       </div>
    </div>
