@@ -1,9 +1,6 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-   $development: {
-      debug: true,
-   },
 
    app: {
       pageTransition: { name: "page", mode: "out-in" },
@@ -13,7 +10,13 @@ export default defineNuxtConfig({
       },
    },
 
-   compatibilityDate: "2025-05-15",
+   nitro: {
+    devProxy: {
+      '/sw.js': { target: '/sw.js' }
+    }
+  },
+
+   compatibilityDate: "2025-12-30",
    devtools: { enabled: true },
    css: ["~/assets/css/main.css"],
    vite: {
@@ -31,7 +34,7 @@ export default defineNuxtConfig({
 
    shadcn: {
       prefix: "",
-      componentDir: "./registry/default/ui",
+      componentDir: "./app/registry/default/ui",
    },
 
    runtimeConfig: {
